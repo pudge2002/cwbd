@@ -11,7 +11,26 @@ namespace LapTop
     public partial class Form1 : Form
     {
         private OleDbConnection _con;
-
+        string[] queries = new string[]
+                {
+            "SELECT * FROM Ноутбуки",
+            "SELECT * FROM Производители",
+            "SELECT * FROM Модели",
+            "SELECT * FROM [Производители Процессоров]",
+            "SELECT * FROM [Серии Процессоров]",
+            "SELECT * FROM [Диагонали Экранов]",
+            "SELECT * FROM Статусы",
+            "SELECT * FROM Цвета",
+            "SELECT * FROM Магазины",
+            "SELECT * FROM Города",
+            "SELECT * FROM Улицы",
+            "SELECT * FROM [Электронные почты]",
+            "SELECT * FROM Ответственные",
+            "SELECT * FROM [Должности ответственных]",
+            "SELECT * FROM Поставщики",
+            "SELECT * FROM [Электронные почты поставщиков]"
+                };
+        DataTable provideTable ;
         public Form1()
         {
             InitializeComponent();
@@ -29,39 +48,54 @@ namespace LapTop
 
         private void LoadData(string databasePath)
         {
-            // Закрытие предыдущего подключения, если оно существует
+            // 
             if (_con != null && _con.State == ConnectionState.Open)
             {
                 _con.Close();
             }
 
-            // Создание подключения к базе данных
+            // 
             _con = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={databasePath}");
 
             try
             {
                 _con.Open();
-                string query = "SELECT * FROM Ноутбуки";
-                OleDbCommand command = new OleDbCommand(query, _con);
+              
+                string query1 = "SELECT c.Id AS [ID], b.[Производитель] AS [Производитель], m.[Производитель процессора] AS [Производитель процессора], f.[Серия процессора] AS [Серия процессора],  [ОЗУ],[Объем SSD], x.[Диагональ экрана] AS [Диагональ экрана],[Вес],[Цена],q.[Статус] AS [Статус],p.[Цвет] AS [Цвет]" +  // работает)))))
+              " FROM (((((([Ноутбуки] AS c" +
+              " INNER JOIN [Производители] AS b ON c.[Производитель] = b.[ID])" +
+              " INNER JOIN [Производители процессоров] AS m ON c.[Производитель процессора] = m.[ID])" +
+              " INNER JOIN [Серии процессоров] AS f ON c.[Серия процессора] = f.[ID])" +
+              " INNER JOIN [Диагонали экранов] AS x ON c.[Диагональ экрана] = x.[ID])" +
+              " INNER JOIN [Статусы] AS q ON c.[Статус] = q.[ID])" +
+              " INNER JOIN [Цвета] AS p ON c.[Цвет] = p.[ID])";
+                string query2 = "SELECT c.Id AS [ID], b.[Производитель] AS [Производитель], m.[Производитель процессора] AS [Производитель процессора],[Дом], f.[Серия процессора] AS [Серия процессора]" +  // работает)))))
+              " FROM ((([Ноутбуки] AS c" +
+              " INNER JOIN [Города] AS b ON c.[Город] = b.[ID])" +
+              " INNER JOIN [Улицы] AS m ON c.[Улица] = m.[ID])" +
+              " INNER JOIN [Электронные почты] AS f ON c.[Email] = f.[ID])";
+                OleDbCommand command = new OleDbCommand(query1, _con);
                 OleDbDataAdapter adapter = new OleDbDataAdapter(command);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
 
-                // Убедитесь, что dataGridView1 инициализирован и находится на tabPage1
-                if (tabPage1.Controls.Contains(dataGridView1))
+                // 
+                if (laptop.Controls.Contains(dataGridView1))
                 {
                     dataGridView1.DataSource = dataTable;
                 }
                 else
                 {
-                    MessageBox.Show("DataGridView не найден на tabPage1");
+                    MessageBox.Show("DataGridView error");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка при подключении к базе данных: " + ex.Message);
+                MessageBox.Show("Ошибка подключения: " + ex.Message);
             }
         }
+
+
 
         // Обработчик события изменения выбранного значения в комбобоксе
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,6 +113,7 @@ namespace LapTop
                 case "Модели":
                     LoadDataFromTable("Модели");
                     break;
+
                 default:
                     MessageBox.Show("Выбранное значение не распознано");
                     break;
@@ -106,7 +141,7 @@ namespace LapTop
 
         private void knopka_Click(object sender, EventArgs e)
         {
-            Form2 frm2 = new Form2(_con); //где Form2 - название вашей формы
+            Form2 frm2 = new Form2(_con); //Form2 - название  формы
             frm2.Show();
         }
 
@@ -161,5 +196,6 @@ namespace LapTop
             }
         }
 
+        
     }
 }
