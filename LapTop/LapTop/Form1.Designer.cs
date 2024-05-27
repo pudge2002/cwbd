@@ -33,6 +33,9 @@
             shops = new TabPage();
             tabControl2 = new TabControl();
             shop = new TabPage();
+            button8 = new Button();
+            button9 = new Button();
+            button10 = new Button();
             dataGridView8 = new DataGridView();
             allParamShop = new TabPage();
             dataGridView13 = new DataGridView();
@@ -41,11 +44,11 @@
             laptops = new TabPage();
             tabControl3 = new TabControl();
             laptop = new TabPage();
-            comboBox1 = new ComboBox();
             button2 = new Button();
             dataGridView1 = new DataGridView();
             button3 = new Button();
             allParamLap = new TabPage();
+            dataGridView16 = new DataGridView();
             dataGridView5 = new DataGridView();
             dataGridView6 = new DataGridView();
             dataGridView7 = new DataGridView();
@@ -58,15 +61,25 @@
             providers = new TabPage();
             tabControl4 = new TabControl();
             allParamProv = new TabPage();
+            button11 = new Button();
+            button12 = new Button();
+            button13 = new Button();
             dataGridView10 = new DataGridView();
             emailProv = new TabPage();
             dataGridView14 = new DataGridView();
             responsible = new TabPage();
             tabControl5 = new TabControl();
             respons = new TabPage();
+            button14 = new Button();
+            button15 = new Button();
+            button16 = new Button();
             dataGridView9 = new DataGridView();
             allParamRes = new TabPage();
             dataGridView15 = new DataGridView();
+            svo = new TabPage();
+            button7 = new Button();
+            button6 = new Button();
+            dataGridView17 = new DataGridView();
             entity.SuspendLayout();
             shops.SuspendLayout();
             tabControl2.SuspendLayout();
@@ -81,6 +94,7 @@
             laptop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             allParamLap.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView16).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView7).BeginInit();
@@ -99,11 +113,13 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView9).BeginInit();
             allParamRes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView15).BeginInit();
+            svo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView17).BeginInit();
             SuspendLayout();
             // 
             // knopka
             // 
-            knopka.Location = new Point(868, 172);
+            knopka.Location = new Point(888, 58);
             knopka.Name = "knopka";
             knopka.Size = new Size(148, 21);
             knopka.TabIndex = 0;
@@ -117,6 +133,7 @@
             entity.Controls.Add(laptops);
             entity.Controls.Add(providers);
             entity.Controls.Add(responsible);
+            entity.Controls.Add(svo);
             entity.Location = new Point(12, 12);
             entity.Name = "entity";
             entity.SelectedIndex = 0;
@@ -146,6 +163,9 @@
             // 
             // shop
             // 
+            shop.Controls.Add(button8);
+            shop.Controls.Add(button9);
+            shop.Controls.Add(button10);
             shop.Controls.Add(dataGridView8);
             shop.Location = new Point(4, 24);
             shop.Name = "shop";
@@ -154,6 +174,34 @@
             shop.TabIndex = 2;
             shop.Text = "Магазин";
             shop.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(888, 58);
+            button8.Name = "button8";
+            button8.Size = new Size(148, 21);
+            button8.TabIndex = 6;
+            button8.Text = "Добавить запись";
+            button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(888, 6);
+            button9.Name = "button9";
+            button9.Size = new Size(148, 23);
+            button9.TabIndex = 7;
+            button9.Text = "Обновить";
+            button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(888, 116);
+            button10.Name = "button10";
+            button10.Size = new Size(148, 23);
+            button10.TabIndex = 8;
+            button10.Text = "Удалить запись";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
             // 
             // dataGridView8
             // 
@@ -227,7 +275,6 @@
             // 
             // laptop
             // 
-            laptop.Controls.Add(comboBox1);
             laptop.Controls.Add(knopka);
             laptop.Controls.Add(button2);
             laptop.Controls.Add(dataGridView1);
@@ -240,17 +287,9 @@
             laptop.Text = "Ноутбуки";
             laptop.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(868, 73);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(149, 23);
-            comboBox1.TabIndex = 2;
-            // 
             // button2
             // 
-            button2.Location = new Point(868, 120);
+            button2.Location = new Point(888, 6);
             button2.Name = "button2";
             button2.Size = new Size(148, 23);
             button2.TabIndex = 3;
@@ -269,16 +308,17 @@
             // 
             // button3
             // 
-            button3.Location = new Point(868, 230);
+            button3.Location = new Point(888, 116);
             button3.Name = "button3";
             button3.Size = new Size(148, 23);
             button3.TabIndex = 5;
-            button3.Text = "button3";
+            button3.Text = "Удалить запись";
             button3.UseVisualStyleBackColor = true;
-           
+            button3.Click += button3_Click;
             // 
             // allParamLap
             // 
+            allParamLap.Controls.Add(dataGridView16);
             allParamLap.Controls.Add(dataGridView5);
             allParamLap.Controls.Add(dataGridView6);
             allParamLap.Controls.Add(dataGridView7);
@@ -296,36 +336,45 @@
             allParamLap.Text = "Сведения о ноутбуках";
             allParamLap.UseVisualStyleBackColor = true;
             // 
+            // dataGridView16
+            // 
+            dataGridView16.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView16.Location = new Point(322, 287);
+            dataGridView16.Name = "dataGridView16";
+            dataGridView16.RowTemplate.Height = 25;
+            dataGridView16.Size = new Size(221, 110);
+            dataGridView16.TabIndex = 9;
+            // 
             // dataGridView5
             // 
             dataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView5.Location = new Point(568, 237);
+            dataGridView5.Location = new Point(323, 159);
             dataGridView5.Name = "dataGridView5";
             dataGridView5.RowTemplate.Height = 25;
-            dataGridView5.Size = new Size(240, 144);
+            dataGridView5.Size = new Size(220, 106);
             dataGridView5.TabIndex = 8;
             // 
             // dataGridView6
             // 
             dataGridView6.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView6.Location = new Point(287, 237);
+            dataGridView6.Location = new Point(16, 287);
             dataGridView6.Name = "dataGridView6";
             dataGridView6.RowTemplate.Height = 25;
-            dataGridView6.Size = new Size(240, 144);
+            dataGridView6.Size = new Size(219, 110);
             dataGridView6.TabIndex = 7;
             // 
             // dataGridView7
             // 
             dataGridView7.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView7.Location = new Point(16, 237);
+            dataGridView7.Location = new Point(16, 159);
             dataGridView7.Name = "dataGridView7";
             dataGridView7.RowTemplate.Height = 25;
-            dataGridView7.Size = new Size(238, 144);
+            dataGridView7.Size = new Size(219, 106);
             dataGridView7.TabIndex = 6;
             // 
             // button5
             // 
-            button5.Location = new Point(645, 184);
+            button5.Location = new Point(579, 194);
             button5.Name = "button5";
             button5.Size = new Size(75, 23);
             button5.TabIndex = 5;
@@ -334,7 +383,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(351, 184);
+            button4.Location = new Point(782, 194);
             button4.Name = "button4";
             button4.Size = new Size(75, 23);
             button4.TabIndex = 4;
@@ -343,7 +392,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(82, 184);
+            button1.Location = new Point(683, 194);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 3;
@@ -353,19 +402,19 @@
             // dataGridView4
             // 
             dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Location = new Point(568, 16);
+            dataGridView4.Location = new Point(583, 16);
             dataGridView4.Name = "dataGridView4";
             dataGridView4.RowTemplate.Height = 25;
-            dataGridView4.Size = new Size(240, 144);
+            dataGridView4.Size = new Size(220, 110);
             dataGridView4.TabIndex = 2;
             // 
             // dataGridView3
             // 
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(287, 16);
+            dataGridView3.Location = new Point(323, 16);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowTemplate.Height = 25;
-            dataGridView3.Size = new Size(240, 144);
+            dataGridView3.Size = new Size(220, 110);
             dataGridView3.TabIndex = 1;
             // 
             // dataGridView2
@@ -374,7 +423,7 @@
             dataGridView2.Location = new Point(16, 16);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(238, 144);
+            dataGridView2.Size = new Size(219, 110);
             dataGridView2.TabIndex = 0;
             // 
             // providers
@@ -400,6 +449,9 @@
             // 
             // allParamProv
             // 
+            allParamProv.Controls.Add(button11);
+            allParamProv.Controls.Add(button12);
+            allParamProv.Controls.Add(button13);
             allParamProv.Controls.Add(dataGridView10);
             allParamProv.Location = new Point(4, 24);
             allParamProv.Name = "allParamProv";
@@ -408,6 +460,34 @@
             allParamProv.TabIndex = 0;
             allParamProv.Text = "Сведения о поставщиках";
             allParamProv.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            button11.Location = new Point(888, 58);
+            button11.Name = "button11";
+            button11.Size = new Size(148, 21);
+            button11.TabIndex = 6;
+            button11.Text = "Добавить запись";
+            button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            button12.Location = new Point(888, 6);
+            button12.Name = "button12";
+            button12.Size = new Size(148, 23);
+            button12.TabIndex = 7;
+            button12.Text = "Обновить";
+            button12.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            button13.Location = new Point(888, 116);
+            button13.Name = "button13";
+            button13.Size = new Size(148, 23);
+            button13.TabIndex = 8;
+            button13.Text = "Удалить запись";
+            button13.UseVisualStyleBackColor = true;
+            button13.Click += button13_Click;
             // 
             // dataGridView10
             // 
@@ -461,6 +541,9 @@
             // 
             // respons
             // 
+            respons.Controls.Add(button14);
+            respons.Controls.Add(button15);
+            respons.Controls.Add(button16);
             respons.Controls.Add(dataGridView9);
             respons.Location = new Point(4, 24);
             respons.Name = "respons";
@@ -469,6 +552,34 @@
             respons.TabIndex = 0;
             respons.Text = "Ответственные";
             respons.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            button14.Location = new Point(888, 58);
+            button14.Name = "button14";
+            button14.Size = new Size(148, 21);
+            button14.TabIndex = 6;
+            button14.Text = "Добавить запись";
+            button14.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            button15.Location = new Point(888, 6);
+            button15.Name = "button15";
+            button15.Size = new Size(148, 23);
+            button15.TabIndex = 7;
+            button15.Text = "Обновить";
+            button15.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            button16.Location = new Point(888, 116);
+            button16.Name = "button16";
+            button16.Size = new Size(148, 23);
+            button16.TabIndex = 8;
+            button16.Text = "Удалить запись";
+            button16.UseVisualStyleBackColor = true;
+            button16.Click += button16_Click;
             // 
             // dataGridView9
             // 
@@ -499,6 +610,47 @@
             dataGridView15.Size = new Size(377, 281);
             dataGridView15.TabIndex = 2;
             // 
+            // svo
+            // 
+            svo.Controls.Add(button7);
+            svo.Controls.Add(button6);
+            svo.Controls.Add(dataGridView17);
+            svo.Location = new Point(4, 24);
+            svo.Name = "svo";
+            svo.Size = new Size(1059, 493);
+            svo.TabIndex = 4;
+            svo.Text = "Сводная таблица";
+            svo.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(485, 421);
+            button7.Name = "button7";
+            button7.Size = new Size(110, 44);
+            button7.TabIndex = 2;
+            button7.Text = "Обновить таблицу";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(285, 421);
+            button6.Name = "button6";
+            button6.Size = new Size(140, 44);
+            button6.TabIndex = 1;
+            button6.Text = "Удалить запись";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // dataGridView17
+            // 
+            dataGridView17.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView17.Location = new Point(3, 34);
+            dataGridView17.Name = "dataGridView17";
+            dataGridView17.RowTemplate.Height = 25;
+            dataGridView17.Size = new Size(1056, 365);
+            dataGridView17.TabIndex = 0;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -521,6 +673,7 @@
             laptop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             allParamLap.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView16).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView6).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView7).EndInit();
@@ -539,6 +692,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView9).EndInit();
             allParamRes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView15).EndInit();
+            svo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView17).EndInit();
             ResumeLayout(false);
         }
 
@@ -548,7 +703,6 @@
         private TabControl entity;
         private TabPage shops;
         private TabPage laptops;
-        private ComboBox comboBox1;
         private DataGridView dataGridView1;
         private Button button2;
         private Button button3;
@@ -583,5 +737,19 @@
         private DataGridView dataGridView14;
         private DataGridView dataGridView9;
         private DataGridView dataGridView15;
+        private DataGridView dataGridView16;
+        private TabPage svo;
+        private Button button7;
+        private Button button6;
+        private DataGridView dataGridView17;
+        private Button button8;
+        private Button button9;
+        private Button button10;
+        private Button button11;
+        private Button button12;
+        private Button button13;
+        private Button button14;
+        private Button button15;
+        private Button button16;
     }
 }
