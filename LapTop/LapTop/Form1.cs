@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
@@ -10,6 +11,25 @@ namespace LapTop
 {
     public partial class Form1 : Form
     {
+        string query1 = "SELECT c.Id AS [ID], b.[Производитель] AS [Производитель], m.[Производитель процессора] AS [Производитель процессора], f.[Серия процессора] AS [Серия процессора],  [ОЗУ],[Объем SSD], x.[Диагональ экрана] AS [Диагональ экрана],[Вес],[Цена],q.[Статус] AS [Статус],p.[Цвет] AS [Цвет]" +
+             " FROM (((((([Ноутбуки] AS c" +
+             " INNER JOIN [Производители] AS b ON c.[Производитель] = b.[ID])" +
+             " INNER JOIN [Производители процессоров] AS m ON c.[Производитель процессора] = m.[ID])" +
+             " INNER JOIN [Серии процессоров] AS f ON c.[Серия процессора] = f.[ID])" +
+             " INNER JOIN [Диагонали экранов] AS x ON c.[Диагональ экрана] = x.[ID])" +
+             " INNER JOIN [Статусы] AS q ON c.[Статус] = q.[ID])" +
+             " INNER JOIN [Цвета] AS p ON c.[Цвет] = p.[ID])";
+        string query2 = "SELECT c.Id AS [ID], b.[Город] AS [Город], m.[Улица] AS [Улица],[Дом], f.[Email] AS [Email]" +
+      " FROM ((([Магазины] AS c" +
+      " INNER JOIN [Города] AS b ON c.[Город] = b.[ID])" +
+      " INNER JOIN [Улицы] AS m ON c.[Улица] = m.[ID])" +
+      " INNER JOIN [Электронные почты] AS f ON c.[Email] = f.[ID])";
+        string query3 = "SELECT c.Id AS [ID], [Фамилия Ответственного],[Имя ответственного],[Отчество ответственного ],[Номер ответственного], f.[Должность ответственного] AS [Должность ответственного]" +
+      " FROM ([Ответственные] AS c" +
+      " INNER JOIN [Должности ответственных] AS f ON c.[Должность ответственного] = f.[ID])";
+        string query4 = "SELECT c.Id AS [ID],  [Фамилия поставщика],[Имя поставщика],[Отчество поставщика],[Телефон поставщика], f.[Email поставщика] AS [Email поставщика],[Дата поставки],[Количество поставки]" +
+      " FROM ([Поставщики] AS c" +
+      " INNER JOIN [Электронные почты поставщиков] AS f ON c.[Email поставщика] = f.[ID])";
         private OleDbConnection _con;
         string[] queries = new string[]
                 {
@@ -38,7 +58,10 @@ namespace LapTop
             // Пример использования файла базы данных, расположенного в проекте
             string databasePath = Path.Combine(Application.StartupPath, "LapTop.mdb");
             LoadData(databasePath);
+            comboBox1.Items.AddRange(new string[] { "Город", "Улица", "Дом" });
 
+            // Установка обработчика события изменения выбранного значения в комбобоксе
+            comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
             // Добавление значений в комбобокс
             //comboBox1.Items.AddRange(new string[] { "Производитель", "Ноутбуки", "Модели" });
 
@@ -74,25 +97,6 @@ namespace LapTop
             {
                 _con.Open();
 
-                string query1 = "SELECT c.Id AS [ID], b.[Производитель] AS [Производитель], m.[Производитель процессора] AS [Производитель процессора], f.[Серия процессора] AS [Серия процессора],  [ОЗУ],[Объем SSD], x.[Диагональ экрана] AS [Диагональ экрана],[Вес],[Цена],q.[Статус] AS [Статус],p.[Цвет] AS [Цвет]" +
-              " FROM (((((([Ноутбуки] AS c" +
-              " INNER JOIN [Производители] AS b ON c.[Производитель] = b.[ID])" +
-              " INNER JOIN [Производители процессоров] AS m ON c.[Производитель процессора] = m.[ID])" +
-              " INNER JOIN [Серии процессоров] AS f ON c.[Серия процессора] = f.[ID])" +
-              " INNER JOIN [Диагонали экранов] AS x ON c.[Диагональ экрана] = x.[ID])" +
-              " INNER JOIN [Статусы] AS q ON c.[Статус] = q.[ID])" +
-              " INNER JOIN [Цвета] AS p ON c.[Цвет] = p.[ID])";
-                string query2 = "SELECT c.Id AS [ID], b.[Город] AS [Город], m.[Улица] AS [Улица],[Дом], f.[Email] AS [Email]" +
-              " FROM ((([Магазины] AS c" +
-              " INNER JOIN [Города] AS b ON c.[Город] = b.[ID])" +
-              " INNER JOIN [Улицы] AS m ON c.[Улица] = m.[ID])" +
-              " INNER JOIN [Электронные почты] AS f ON c.[Email] = f.[ID])";
-                string query3 = "SELECT c.Id AS [ID], [Фамилия Ответственного],[Имя ответственного],[Отчество ответственного ],[Номер ответственного], f.[Должность ответственного] AS [Должность ответственного]" +
-              " FROM ([Ответственные] AS c" +
-              " INNER JOIN [Должности ответственных] AS f ON c.[Должность ответственного] = f.[ID])";
-                string query4 = "SELECT c.Id AS [ID],  [Фамилия поставщика],[Имя поставщика],[Отчество поставщика],[Телефон поставщика], f.[Email поставщика] AS [Email поставщика],[Дата поставки],[Количество поставки]" +
-              " FROM ([Поставщики] AS c" +
-              " INNER JOIN [Электронные почты поставщиков] AS f ON c.[Email поставщика] = f.[ID])";
 
 
                 string[] queries = new string[]
@@ -150,7 +154,12 @@ namespace LapTop
             }
         }
 
-
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            comboBox1.Items.Add("Город");
+            comboBox1.Items.Add("Улица");
+            comboBox1.Items.Add("Дом");
+        }
         private void LoadDataFromTable(string tableName)
         {
             try
@@ -280,8 +289,40 @@ namespace LapTop
             }
             LoadData(Path.Combine(Application.StartupPath, "LapTop.mdb"));
         }
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = comboBox1.SelectedItem.ToString();
 
+            switch (selectedValue)
+            {
+                case "Город":
+                    LoadDataFromTable2("b.[Город]");
+                    break;
+                case "Улица":
+                    LoadDataFromTable2("m.[Улица]");
+                    break;
+                case "Дом":
+                    LoadDataFromTable2("[Дом]");
+                    break;
 
+                default:
+                    MessageBox.Show("ошибка");
+                    break;
+            }
+        }
+        private void LoadDataFromTable2(string tableName)
+        {
+
+            string query = $"{query2} ORDER BY {tableName}";
+                OleDbCommand command = new OleDbCommand(query, _con);
+                OleDbDataAdapter adapter = new OleDbDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                dataGridView8.DataSource = dataTable;
+            
+            
+        }
         private void button6_Click(object sender, EventArgs e)
         {
             DeleteSelectedRow(_con, "Сводная таблица", dataGridView17);

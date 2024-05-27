@@ -80,6 +80,9 @@
             button7 = new Button();
             button6 = new Button();
             dataGridView17 = new DataGridView();
+            label1 = new Label();
+            comboBox1 = new ComboBox();
+            button17 = new Button();
             entity.SuspendLayout();
             shops.SuspendLayout();
             tabControl2.SuspendLayout();
@@ -163,6 +166,9 @@
             // 
             // shop
             // 
+            shop.Controls.Add(button17);
+            shop.Controls.Add(comboBox1);
+            shop.Controls.Add(label1);
             shop.Controls.Add(button8);
             shop.Controls.Add(button9);
             shop.Controls.Add(button10);
@@ -205,6 +211,9 @@
             // 
             // dataGridView8
             // 
+            dataGridView8.AllowUserToAddRows = false;
+            dataGridView8.AllowUserToDeleteRows = false;
+            dataGridView8.AllowUserToResizeRows = false;
             dataGridView8.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView8.Location = new Point(6, 6);
             dataGridView8.Name = "dataGridView8";
@@ -651,6 +660,32 @@
             dataGridView17.Size = new Size(1056, 365);
             dataGridView17.TabIndex = 0;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(888, 164);
+            label1.Name = "label1";
+            label1.Size = new Size(90, 15);
+            label1.TabIndex = 9;
+            label1.Text = "Сортировка по";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(888, 193);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(148, 23);
+            comboBox1.TabIndex = 10;
+            // 
+            // button17
+            // 
+            button17.Location = new Point(890, 233);
+            button17.Name = "button17";
+            button17.Size = new Size(146, 23);
+            button17.TabIndex = 11;
+            button17.Text = "Выполнить";
+            button17.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -663,6 +698,7 @@
             shops.ResumeLayout(false);
             tabControl2.ResumeLayout(false);
             shop.ResumeLayout(false);
+            shop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView8).EndInit();
             allParamShop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView13).EndInit();
@@ -751,5 +787,8 @@
         private Button button14;
         private Button button15;
         private Button button16;
+        private Button button17;
+        private ComboBox comboBox1;
+        private Label label1;
     }
 }
