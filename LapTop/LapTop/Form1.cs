@@ -11,9 +11,10 @@ namespace LapTop
 {
     public partial class Form1 : Form
     {
-        string query1 = "SELECT c.Id AS [ID], b.[Производитель] AS [Производитель], m.[Производитель процессора] AS [Производитель процессора], f.[Серия процессора] AS [Серия процессора],  [ОЗУ],[Объем SSD], x.[Диагональ экрана] AS [Диагональ экрана],[Вес],[Цена],q.[Статус] AS [Статус],p.[Цвет] AS [Цвет]" +
-             " FROM (((((([Ноутбуки] AS c" +
+        string query1 = "SELECT c.Id AS [ID], b.[Производитель] AS [Производитель],i.[Модель] AS [Модель], m.[Производитель процессора] AS [Производитель процессора], f.[Серия процессора] AS [Серия процессора],  [ОЗУ],[Объем SSD], x.[Диагональ экрана] AS [Диагональ экрана],[Вес],[Цена],q.[Статус] AS [Статус],p.[Цвет] AS [Цвет]" +
+             " FROM ((((((([Ноутбуки] AS c" +
              " INNER JOIN [Производители] AS b ON c.[Производитель] = b.[ID])" +
+                " INNER JOIN [Модели] AS i ON c.[Модель] = i.[ID])" +
              " INNER JOIN [Производители процессоров] AS m ON c.[Производитель процессора] = m.[ID])" +
              " INNER JOIN [Серии процессоров] AS f ON c.[Серия процессора] = f.[ID])" +
              " INNER JOIN [Диагонали экранов] AS x ON c.[Диагональ экрана] = x.[ID])" +
@@ -62,11 +63,19 @@ namespace LapTop
 
             // Установка обработчика события изменения выбранного значения в комбобоксе
             comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
-            // Добавление значений в комбобокс
-            //comboBox1.Items.AddRange(new string[] { "Производитель", "Ноутбуки", "Модели" });
+            comboBox2.Items.AddRange(new string[] { "Производитель", "Модель", "Производитель процессора", "Серия процессора", "ОЗУ", "Объем SSD", "Диагональ экрана", "Цена", "Статус", "Цвет" });
 
-            //// Установка обработчика события изменения выбранного значения в комбобоксе
-            //comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
+            // Установка обработчика события изменения выбранных элементов в ListBox
+            comboBox2.SelectedIndexChanged += ComboBox2_SelectedIndexChanged;
+            comboBox3.Items.AddRange(new string[] { "Город", "Улица", "Дом" });
+
+            // Установка обработчика события изменения выбранного значения в комбобоксе
+            comboBox3.SelectedIndexChanged += ComboBox3_SelectedIndexChanged;
+            comboBox4.Items.AddRange(new string[] { "Город", "Улица", "Дом" });
+
+            // Установка обработчика события изменения выбранного значения в комбобоксе
+            comboBox4.SelectedIndexChanged += ComboBox4_SelectedIndexChanged;
+
         }
         private void FillDataGridView(string query, DataGridView dataGridView)
         {
@@ -296,13 +305,13 @@ namespace LapTop
             switch (selectedValue)
             {
                 case "Город":
-                    LoadDataFromTable2("b.[Город]");
+                    LoadDataFromTable2("b.[Город]", dataGridView8);
                     break;
                 case "Улица":
-                    LoadDataFromTable2("m.[Улица]");
+                    LoadDataFromTable2("m.[Улица]", dataGridView8);
                     break;
                 case "Дом":
-                    LoadDataFromTable2("[Дом]");
+                    LoadDataFromTable2("[Дом]", dataGridView8);
                     break;
 
                 default:
@@ -310,7 +319,91 @@ namespace LapTop
                     break;
             }
         }
-        private void LoadDataFromTable2(string tableName)
+        private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = comboBox2.SelectedItem.ToString();
+
+            switch (selectedValue)
+            {
+                case "Производитель":
+                    LoadDataFromTable2("b.[Производитель]", dataGridView1);
+                    break;
+                case "Модель":
+                    LoadDataFromTable2("i.[Модель]", dataGridView1);
+                    break;
+                case "Производитель процессора":
+                    LoadDataFromTable2("m.[Производитель процессора]", dataGridView1);
+                    break;
+                case "Серия процессора":
+                    LoadDataFromTable2("d.[Серия процессора]", dataGridView1);
+                    break;
+                case "ОЗУ":
+                    LoadDataFromTable2("[ОЗУ]", dataGridView1);
+                    break;
+                case "Объем SSD":
+                    LoadDataFromTable2("[Объем SSD]", dataGridView1);
+                    break;
+                case "Диагональ экрана":
+                    LoadDataFromTable2("x.[Диагональ экрана]", dataGridView1);
+                    break;
+                case "Цена":
+                    LoadDataFromTable2("[Цена]", dataGridView1);
+                    break;
+                case "Статус":
+                    LoadDataFromTable2("q.[Статус]", dataGridView1);
+                    break;
+                case "Цвет":
+                    LoadDataFromTable2("p.[Цвет]", dataGridView1);
+                    break;
+
+                default:
+                    MessageBox.Show("ошибка");
+                    break;
+            }
+        }
+        private void ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = comboBox1.SelectedItem.ToString();
+
+            //switch (selectedValue)
+            //{
+            //    case "Город":
+            //        LoadDataFromTable2("b.[Город]");
+            //        break;
+            //    case "Улица":
+            //        LoadDataFromTable2("m.[Улица]");
+            //        break;
+            //    case "Дом":
+            //        LoadDataFromTable2("[Дом]");
+            //        break;
+
+            //    default:
+            //        MessageBox.Show("ошибка");
+            //        break;
+            //}
+        }
+        private void ComboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = comboBox1.SelectedItem.ToString();
+
+            //switch (selectedValue)
+            //{
+            //    case "Город":
+            //        LoadDataFromTable2("b.[Город]");
+            //        break;
+            //    case "Улица":
+            //        LoadDataFromTable2("m.[Улица]");
+            //        break;
+            //    case "Дом":
+            //        LoadDataFromTable2("[Дом]");
+            //        break;
+
+            //    default:
+            //        MessageBox.Show("ошибка");
+            //        break;
+            //}
+        }
+        private void LoadDataFromTable2(string tableName, DataGridView dataGridVieww)
         {
 
             string query = $"{query2} ORDER BY {tableName}";
@@ -319,7 +412,7 @@ namespace LapTop
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
 
-                dataGridView8.DataSource = dataTable;
+                dataGridVieww.DataSource = dataTable;
             
             
         }

@@ -33,6 +33,8 @@
             shops = new TabPage();
             tabControl2 = new TabControl();
             shop = new TabPage();
+            comboBox1 = new ComboBox();
+            label1 = new Label();
             button8 = new Button();
             button9 = new Button();
             button10 = new Button();
@@ -44,6 +46,8 @@
             laptops = new TabPage();
             tabControl3 = new TabControl();
             laptop = new TabPage();
+            comboBox2 = new ComboBox();
+            label2 = new Label();
             button2 = new Button();
             dataGridView1 = new DataGridView();
             button3 = new Button();
@@ -61,6 +65,8 @@
             providers = new TabPage();
             tabControl4 = new TabControl();
             allParamProv = new TabPage();
+            comboBox3 = new ComboBox();
+            label3 = new Label();
             button11 = new Button();
             button12 = new Button();
             button13 = new Button();
@@ -70,6 +76,8 @@
             responsible = new TabPage();
             tabControl5 = new TabControl();
             respons = new TabPage();
+            comboBox4 = new ComboBox();
+            label4 = new Label();
             button14 = new Button();
             button15 = new Button();
             button16 = new Button();
@@ -80,9 +88,7 @@
             button7 = new Button();
             button6 = new Button();
             dataGridView17 = new DataGridView();
-            label1 = new Label();
-            comboBox1 = new ComboBox();
-            button17 = new Button();
+            checkedListBox1 = new CheckedListBox();
             entity.SuspendLayout();
             shops.SuspendLayout();
             tabControl2.SuspendLayout();
@@ -166,7 +172,6 @@
             // 
             // shop
             // 
-            shop.Controls.Add(button17);
             shop.Controls.Add(comboBox1);
             shop.Controls.Add(label1);
             shop.Controls.Add(button8);
@@ -180,6 +185,23 @@
             shop.TabIndex = 2;
             shop.Text = "Магазин";
             shop.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(888, 193);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(148, 23);
+            comboBox1.TabIndex = 10;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(888, 164);
+            label1.Name = "label1";
+            label1.Size = new Size(90, 15);
+            label1.TabIndex = 9;
+            label1.Text = "Сортировка по";
             // 
             // button8
             // 
@@ -284,6 +306,9 @@
             // 
             // laptop
             // 
+            laptop.Controls.Add(checkedListBox1);
+            laptop.Controls.Add(comboBox2);
+            laptop.Controls.Add(label2);
             laptop.Controls.Add(knopka);
             laptop.Controls.Add(button2);
             laptop.Controls.Add(dataGridView1);
@@ -295,6 +320,23 @@
             laptop.TabIndex = 0;
             laptop.Text = "Ноутбуки";
             laptop.UseVisualStyleBackColor = true;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(888, 188);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(148, 23);
+            comboBox2.TabIndex = 12;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(888, 159);
+            label2.Name = "label2";
+            label2.Size = new Size(90, 15);
+            label2.TabIndex = 11;
+            label2.Text = "Сортировка по";
             // 
             // button2
             // 
@@ -458,6 +500,8 @@
             // 
             // allParamProv
             // 
+            allParamProv.Controls.Add(comboBox3);
+            allParamProv.Controls.Add(label3);
             allParamProv.Controls.Add(button11);
             allParamProv.Controls.Add(button12);
             allParamProv.Controls.Add(button13);
@@ -469,6 +513,23 @@
             allParamProv.TabIndex = 0;
             allParamProv.Text = "Сведения о поставщиках";
             allParamProv.UseVisualStyleBackColor = true;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(888, 198);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(148, 23);
+            comboBox3.TabIndex = 12;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(888, 169);
+            label3.Name = "label3";
+            label3.Size = new Size(90, 15);
+            label3.TabIndex = 11;
+            label3.Text = "Сортировка по";
             // 
             // button11
             // 
@@ -550,6 +611,8 @@
             // 
             // respons
             // 
+            respons.Controls.Add(comboBox4);
+            respons.Controls.Add(label4);
             respons.Controls.Add(button14);
             respons.Controls.Add(button15);
             respons.Controls.Add(button16);
@@ -561,6 +624,23 @@
             respons.TabIndex = 0;
             respons.Text = "Ответственные";
             respons.UseVisualStyleBackColor = true;
+            // 
+            // comboBox4
+            // 
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(888, 202);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(148, 23);
+            comboBox4.TabIndex = 12;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(888, 173);
+            label4.Name = "label4";
+            label4.Size = new Size(90, 15);
+            label4.TabIndex = 11;
+            label4.Text = "Сортировка по";
             // 
             // button14
             // 
@@ -660,31 +740,13 @@
             dataGridView17.Size = new Size(1056, 365);
             dataGridView17.TabIndex = 0;
             // 
-            // label1
+            // checkedListBox1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(888, 164);
-            label1.Name = "label1";
-            label1.Size = new Size(90, 15);
-            label1.TabIndex = 9;
-            label1.Text = "Сортировка по";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(888, 193);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(148, 23);
-            comboBox1.TabIndex = 10;
-            // 
-            // button17
-            // 
-            button17.Location = new Point(890, 233);
-            button17.Name = "button17";
-            button17.Size = new Size(146, 23);
-            button17.TabIndex = 11;
-            button17.Text = "Выполнить";
-            button17.UseVisualStyleBackColor = true;
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Location = new Point(888, 241);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(120, 94);
+            checkedListBox1.TabIndex = 14;
             // 
             // Form1
             // 
@@ -707,6 +769,7 @@
             laptops.ResumeLayout(false);
             tabControl3.ResumeLayout(false);
             laptop.ResumeLayout(false);
+            laptop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             allParamLap.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView16).EndInit();
@@ -719,12 +782,14 @@
             providers.ResumeLayout(false);
             tabControl4.ResumeLayout(false);
             allParamProv.ResumeLayout(false);
+            allParamProv.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView10).EndInit();
             emailProv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView14).EndInit();
             responsible.ResumeLayout(false);
             tabControl5.ResumeLayout(false);
             respons.ResumeLayout(false);
+            respons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView9).EndInit();
             allParamRes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView15).EndInit();
@@ -787,8 +852,14 @@
         private Button button14;
         private Button button15;
         private Button button16;
-        private Button button17;
         private ComboBox comboBox1;
         private Label label1;
+        private ComboBox comboBox2;
+        private Label label2;
+        private ComboBox comboBox3;
+        private Label label3;
+        private ComboBox comboBox4;
+        private Label label4;
+        private CheckedListBox checkedListBox1;
     }
 }
