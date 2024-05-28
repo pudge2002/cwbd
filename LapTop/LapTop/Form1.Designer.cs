@@ -33,6 +33,7 @@
             shops = new TabPage();
             tabControl2 = new TabControl();
             shop = new TabPage();
+            button40 = new Button();
             comboBox1 = new ComboBox();
             label1 = new Label();
             button8 = new Button();
@@ -40,24 +41,53 @@
             button10 = new Button();
             dataGridView8 = new DataGridView();
             allParamShop = new TabPage();
+            groupBox3 = new GroupBox();
+            button36 = new Button();
+            comboBox7 = new ComboBox();
+            button34 = new Button();
+            button35 = new Button();
+            button32 = new Button();
+            button33 = new Button();
+            button30 = new Button();
+            button31 = new Button();
             dataGridView13 = new DataGridView();
             dataGridView12 = new DataGridView();
             dataGridView11 = new DataGridView();
             laptops = new TabPage();
             tabControl3 = new TabControl();
             laptop = new TabPage();
+            button39 = new Button();
+            groupBox1 = new GroupBox();
+            comboBox10 = new ComboBox();
+            comboBox5 = new ComboBox();
+            textBox1 = new TextBox();
+            button17 = new Button();
             comboBox2 = new ComboBox();
             label2 = new Label();
             button2 = new Button();
             dataGridView1 = new DataGridView();
             button3 = new Button();
             allParamLap = new TabPage();
+            groupBox2 = new GroupBox();
+            button29 = new Button();
+            comboBox6 = new ComboBox();
+            button4 = new Button();
+            button28 = new Button();
+            button26 = new Button();
+            button27 = new Button();
+            button24 = new Button();
+            button25 = new Button();
+            button22 = new Button();
+            button23 = new Button();
+            button20 = new Button();
+            button21 = new Button();
+            button18 = new Button();
+            button19 = new Button();
             dataGridView16 = new DataGridView();
             dataGridView5 = new DataGridView();
             dataGridView6 = new DataGridView();
             dataGridView7 = new DataGridView();
             button5 = new Button();
-            button4 = new Button();
             button1 = new Button();
             dataGridView4 = new DataGridView();
             dataGridView3 = new DataGridView();
@@ -65,6 +95,10 @@
             providers = new TabPage();
             tabControl4 = new TabControl();
             allParamProv = new TabPage();
+            button41 = new Button();
+            groupBox4 = new GroupBox();
+            dateTimePicker1 = new DateTimePicker();
+            comboBox8 = new ComboBox();
             comboBox3 = new ComboBox();
             label3 = new Label();
             button11 = new Button();
@@ -76,6 +110,9 @@
             responsible = new TabPage();
             tabControl5 = new TabControl();
             respons = new TabPage();
+            button42 = new Button();
+            groupBox5 = new GroupBox();
+            comboBox9 = new ComboBox();
             comboBox4 = new ComboBox();
             label4 = new Label();
             button14 = new Button();
@@ -88,21 +125,23 @@
             button7 = new Button();
             button6 = new Button();
             dataGridView17 = new DataGridView();
-            checkedListBox1 = new CheckedListBox();
             entity.SuspendLayout();
             shops.SuspendLayout();
             tabControl2.SuspendLayout();
             shop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView8).BeginInit();
             allParamShop.SuspendLayout();
+            groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView13).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView11).BeginInit();
             laptops.SuspendLayout();
             tabControl3.SuspendLayout();
             laptop.SuspendLayout();
+            groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             allParamLap.SuspendLayout();
+            groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView16).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView6).BeginInit();
@@ -113,12 +152,14 @@
             providers.SuspendLayout();
             tabControl4.SuspendLayout();
             allParamProv.SuspendLayout();
+            groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView10).BeginInit();
             emailProv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView14).BeginInit();
             responsible.SuspendLayout();
             tabControl5.SuspendLayout();
             respons.SuspendLayout();
+            groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView9).BeginInit();
             allParamRes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView15).BeginInit();
@@ -128,9 +169,9 @@
             // 
             // knopka
             // 
-            knopka.Location = new Point(888, 58);
+            knopka.Location = new Point(888, 35);
             knopka.Name = "knopka";
-            knopka.Size = new Size(148, 21);
+            knopka.Size = new Size(148, 25);
             knopka.TabIndex = 0;
             knopka.Text = "Добавить запись";
             knopka.UseVisualStyleBackColor = true;
@@ -172,6 +213,7 @@
             // 
             // shop
             // 
+            shop.Controls.Add(button40);
             shop.Controls.Add(comboBox1);
             shop.Controls.Add(label1);
             shop.Controls.Add(button8);
@@ -186,10 +228,19 @@
             shop.Text = "Магазин";
             shop.UseVisualStyleBackColor = true;
             // 
+            // button40
+            // 
+            button40.Location = new Point(889, 95);
+            button40.Name = "button40";
+            button40.Size = new Size(147, 23);
+            button40.TabIndex = 15;
+            button40.Text = "Изменить запись";
+            button40.UseVisualStyleBackColor = true;
+            // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(888, 193);
+            comboBox1.Location = new Point(888, 187);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(148, 23);
             comboBox1.TabIndex = 10;
@@ -197,7 +248,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(888, 164);
+            label1.Location = new Point(888, 158);
             label1.Name = "label1";
             label1.Size = new Size(90, 15);
             label1.TabIndex = 9;
@@ -205,9 +256,9 @@
             // 
             // button8
             // 
-            button8.Location = new Point(888, 58);
+            button8.Location = new Point(888, 35);
             button8.Name = "button8";
-            button8.Size = new Size(148, 21);
+            button8.Size = new Size(148, 25);
             button8.TabIndex = 6;
             button8.Text = "Добавить запись";
             button8.UseVisualStyleBackColor = true;
@@ -223,7 +274,7 @@
             // 
             // button10
             // 
-            button10.Location = new Point(888, 116);
+            button10.Location = new Point(888, 66);
             button10.Name = "button10";
             button10.Size = new Size(148, 23);
             button10.TabIndex = 8;
@@ -245,6 +296,13 @@
             // 
             // allParamShop
             // 
+            allParamShop.Controls.Add(groupBox3);
+            allParamShop.Controls.Add(button34);
+            allParamShop.Controls.Add(button35);
+            allParamShop.Controls.Add(button32);
+            allParamShop.Controls.Add(button33);
+            allParamShop.Controls.Add(button30);
+            allParamShop.Controls.Add(button31);
             allParamShop.Controls.Add(dataGridView13);
             allParamShop.Controls.Add(dataGridView12);
             allParamShop.Controls.Add(dataGridView11);
@@ -256,10 +314,93 @@
             allParamShop.Text = "Сведения о магазинах";
             allParamShop.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(button36);
+            groupBox3.Controls.Add(comboBox7);
+            groupBox3.Location = new Point(348, 264);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(284, 145);
+            groupBox3.TabIndex = 12;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Добавить записи";
+            // 
+            // button36
+            // 
+            button36.Location = new Point(81, 91);
+            button36.Name = "button36";
+            button36.Size = new Size(119, 54);
+            button36.TabIndex = 1;
+            button36.Text = "Добавить запись";
+            button36.UseVisualStyleBackColor = true;
+            // 
+            // comboBox7
+            // 
+            comboBox7.FormattingEnabled = true;
+            comboBox7.Location = new Point(65, 39);
+            comboBox7.Name = "comboBox7";
+            comboBox7.Size = new Size(148, 23);
+            comboBox7.TabIndex = 0;
+            comboBox7.Text = "Выбор таблицы";
+            // 
+            // button34
+            // 
+            button34.Location = new Point(898, 181);
+            button34.Name = "button34";
+            button34.Size = new Size(75, 23);
+            button34.TabIndex = 11;
+            button34.Text = "Удалить";
+            button34.UseVisualStyleBackColor = true;
+            // 
+            // button35
+            // 
+            button35.Location = new Point(735, 181);
+            button35.Name = "button35";
+            button35.Size = new Size(75, 23);
+            button35.TabIndex = 10;
+            button35.Text = "Изменить";
+            button35.UseVisualStyleBackColor = true;
+            // 
+            // button32
+            // 
+            button32.Location = new Point(529, 181);
+            button32.Name = "button32";
+            button32.Size = new Size(75, 23);
+            button32.TabIndex = 9;
+            button32.Text = "Удалить";
+            button32.UseVisualStyleBackColor = true;
+            // 
+            // button33
+            // 
+            button33.Location = new Point(366, 181);
+            button33.Name = "button33";
+            button33.Size = new Size(75, 23);
+            button33.TabIndex = 8;
+            button33.Text = "Изменить";
+            button33.UseVisualStyleBackColor = true;
+            // 
+            // button30
+            // 
+            button30.Location = new Point(184, 181);
+            button30.Name = "button30";
+            button30.Size = new Size(75, 23);
+            button30.TabIndex = 7;
+            button30.Text = "Удалить";
+            button30.UseVisualStyleBackColor = true;
+            // 
+            // button31
+            // 
+            button31.Location = new Point(21, 181);
+            button31.Name = "button31";
+            button31.Size = new Size(75, 23);
+            button31.TabIndex = 6;
+            button31.Text = "Изменить";
+            button31.UseVisualStyleBackColor = true;
+            // 
             // dataGridView13
             // 
             dataGridView13.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView13.Location = new Point(21, 230);
+            dataGridView13.Location = new Point(735, 21);
             dataGridView13.Name = "dataGridView13";
             dataGridView13.RowTemplate.Height = 25;
             dataGridView13.Size = new Size(238, 144);
@@ -268,7 +409,7 @@
             // dataGridView12
             // 
             dataGridView12.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView12.Location = new Point(308, 21);
+            dataGridView12.Location = new Point(366, 21);
             dataGridView12.Name = "dataGridView12";
             dataGridView12.RowTemplate.Height = 25;
             dataGridView12.Size = new Size(238, 144);
@@ -306,7 +447,8 @@
             // 
             // laptop
             // 
-            laptop.Controls.Add(checkedListBox1);
+            laptop.Controls.Add(button39);
+            laptop.Controls.Add(groupBox1);
             laptop.Controls.Add(comboBox2);
             laptop.Controls.Add(label2);
             laptop.Controls.Add(knopka);
@@ -321,6 +463,64 @@
             laptop.Text = "Ноутбуки";
             laptop.UseVisualStyleBackColor = true;
             // 
+            // button39
+            // 
+            button39.Location = new Point(889, 99);
+            button39.Name = "button39";
+            button39.Size = new Size(147, 23);
+            button39.TabIndex = 14;
+            button39.Text = "Изменить запись";
+            button39.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(comboBox10);
+            groupBox1.Controls.Add(comboBox5);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(button17);
+            groupBox1.Location = new Point(889, 224);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(147, 170);
+            groupBox1.TabIndex = 13;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Действия";
+            // 
+            // comboBox10
+            // 
+            comboBox10.FormattingEnabled = true;
+            comboBox10.Location = new Point(18, 18);
+            comboBox10.Name = "comboBox10";
+            comboBox10.Size = new Size(108, 23);
+            comboBox10.TabIndex = 3;
+            comboBox10.Text = "Сортировка по полю";
+            // 
+            // comboBox5
+            // 
+            comboBox5.FormattingEnabled = true;
+            comboBox5.Location = new Point(20, 76);
+            comboBox5.Name = "comboBox5";
+            comboBox5.Size = new Size(107, 23);
+            comboBox5.TabIndex = 2;
+            comboBox5.Text = "Действие";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(17, 47);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Ввести число";
+            textBox1.Size = new Size(109, 23);
+            textBox1.TabIndex = 1;
+            // 
+            // button17
+            // 
+            button17.Location = new Point(20, 105);
+            button17.Name = "button17";
+            button17.Size = new Size(109, 33);
+            button17.TabIndex = 0;
+            button17.Text = "В наличии";
+            button17.UseVisualStyleBackColor = true;
+            button17.Click += button17_Click;
+            // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
@@ -328,6 +528,7 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(148, 23);
             comboBox2.TabIndex = 12;
+            comboBox2.Text = "Выбор поля";
             // 
             // label2
             // 
@@ -359,7 +560,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(888, 116);
+            button3.Location = new Point(888, 66);
             button3.Name = "button3";
             button3.Size = new Size(148, 23);
             button3.TabIndex = 5;
@@ -369,12 +570,24 @@
             // 
             // allParamLap
             // 
+            allParamLap.Controls.Add(groupBox2);
+            allParamLap.Controls.Add(button4);
+            allParamLap.Controls.Add(button28);
+            allParamLap.Controls.Add(button26);
+            allParamLap.Controls.Add(button27);
+            allParamLap.Controls.Add(button24);
+            allParamLap.Controls.Add(button25);
+            allParamLap.Controls.Add(button22);
+            allParamLap.Controls.Add(button23);
+            allParamLap.Controls.Add(button20);
+            allParamLap.Controls.Add(button21);
+            allParamLap.Controls.Add(button18);
+            allParamLap.Controls.Add(button19);
             allParamLap.Controls.Add(dataGridView16);
             allParamLap.Controls.Add(dataGridView5);
             allParamLap.Controls.Add(dataGridView6);
             allParamLap.Controls.Add(dataGridView7);
             allParamLap.Controls.Add(button5);
-            allParamLap.Controls.Add(button4);
             allParamLap.Controls.Add(button1);
             allParamLap.Controls.Add(dataGridView4);
             allParamLap.Controls.Add(dataGridView3);
@@ -387,85 +600,213 @@
             allParamLap.Text = "Сведения о ноутбуках";
             allParamLap.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(button29);
+            groupBox2.Controls.Add(comboBox6);
+            groupBox2.Location = new Point(771, 179);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(200, 128);
+            groupBox2.TabIndex = 22;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Добавить записи";
+            // 
+            // button29
+            // 
+            button29.Location = new Point(48, 74);
+            button29.Name = "button29";
+            button29.Size = new Size(113, 48);
+            button29.TabIndex = 1;
+            button29.Text = "Добавить запись";
+            button29.UseVisualStyleBackColor = true;
+            // 
+            // comboBox6
+            // 
+            comboBox6.FormattingEnabled = true;
+            comboBox6.Location = new Point(10, 35);
+            comboBox6.Name = "comboBox6";
+            comboBox6.Size = new Size(184, 23);
+            comboBox6.TabIndex = 0;
+            comboBox6.Text = "Выбор таблицы";
+            // 
+            // button4
+            // 
+            button4.Location = new Point(410, 150);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 23);
+            button4.TabIndex = 21;
+            button4.Text = "Удалить";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button28
+            // 
+            button28.Location = new Point(266, 150);
+            button28.Name = "button28";
+            button28.Size = new Size(75, 23);
+            button28.TabIndex = 20;
+            button28.Text = "Изменить";
+            button28.UseVisualStyleBackColor = true;
+            // 
+            // button26
+            // 
+            button26.Location = new Point(915, 150);
+            button26.Name = "button26";
+            button26.Size = new Size(75, 23);
+            button26.TabIndex = 19;
+            button26.Text = "Удалить";
+            button26.UseVisualStyleBackColor = true;
+            // 
+            // button27
+            // 
+            button27.Location = new Point(771, 150);
+            button27.Name = "button27";
+            button27.Size = new Size(75, 23);
+            button27.TabIndex = 18;
+            button27.Text = "Изменить";
+            button27.UseVisualStyleBackColor = true;
+            // 
+            // button24
+            // 
+            button24.Location = new Point(662, 313);
+            button24.Name = "button24";
+            button24.Size = new Size(75, 23);
+            button24.TabIndex = 17;
+            button24.Text = "Удалить";
+            button24.UseVisualStyleBackColor = true;
+            // 
+            // button25
+            // 
+            button25.Location = new Point(518, 313);
+            button25.Name = "button25";
+            button25.Size = new Size(75, 23);
+            button25.TabIndex = 16;
+            button25.Text = "Изменить";
+            button25.UseVisualStyleBackColor = true;
+            // 
+            // button22
+            // 
+            button22.Location = new Point(662, 150);
+            button22.Name = "button22";
+            button22.Size = new Size(75, 23);
+            button22.TabIndex = 15;
+            button22.Text = "Удалить";
+            button22.UseVisualStyleBackColor = true;
+            // 
+            // button23
+            // 
+            button23.Location = new Point(518, 150);
+            button23.Name = "button23";
+            button23.Size = new Size(75, 23);
+            button23.TabIndex = 14;
+            button23.Text = "Изменить";
+            button23.UseVisualStyleBackColor = true;
+            // 
+            // button20
+            // 
+            button20.Location = new Point(410, 313);
+            button20.Name = "button20";
+            button20.Size = new Size(75, 23);
+            button20.TabIndex = 13;
+            button20.Text = "Удалить";
+            button20.UseVisualStyleBackColor = true;
+            // 
+            // button21
+            // 
+            button21.Location = new Point(266, 313);
+            button21.Name = "button21";
+            button21.Size = new Size(75, 23);
+            button21.TabIndex = 12;
+            button21.Text = "Изменить";
+            button21.UseVisualStyleBackColor = true;
+            // 
+            // button18
+            // 
+            button18.Location = new Point(160, 313);
+            button18.Name = "button18";
+            button18.Size = new Size(75, 23);
+            button18.TabIndex = 11;
+            button18.Text = "Удалить";
+            button18.UseVisualStyleBackColor = true;
+            // 
+            // button19
+            // 
+            button19.Location = new Point(16, 313);
+            button19.Name = "button19";
+            button19.Size = new Size(75, 23);
+            button19.TabIndex = 10;
+            button19.Text = "Изменить";
+            button19.UseVisualStyleBackColor = true;
+            // 
             // dataGridView16
             // 
             dataGridView16.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView16.Location = new Point(322, 287);
+            dataGridView16.Location = new Point(264, 179);
             dataGridView16.Name = "dataGridView16";
             dataGridView16.RowTemplate.Height = 25;
-            dataGridView16.Size = new Size(221, 110);
+            dataGridView16.Size = new Size(221, 128);
             dataGridView16.TabIndex = 9;
             // 
             // dataGridView5
             // 
             dataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView5.Location = new Point(323, 159);
+            dataGridView5.Location = new Point(770, 16);
             dataGridView5.Name = "dataGridView5";
             dataGridView5.RowTemplate.Height = 25;
-            dataGridView5.Size = new Size(220, 106);
+            dataGridView5.Size = new Size(220, 128);
             dataGridView5.TabIndex = 8;
             // 
             // dataGridView6
             // 
             dataGridView6.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView6.Location = new Point(16, 287);
+            dataGridView6.Location = new Point(16, 179);
             dataGridView6.Name = "dataGridView6";
             dataGridView6.RowTemplate.Height = 25;
-            dataGridView6.Size = new Size(219, 110);
+            dataGridView6.Size = new Size(219, 128);
             dataGridView6.TabIndex = 7;
             // 
             // dataGridView7
             // 
             dataGridView7.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView7.Location = new Point(16, 159);
+            dataGridView7.Location = new Point(518, 179);
             dataGridView7.Name = "dataGridView7";
             dataGridView7.RowTemplate.Height = 25;
-            dataGridView7.Size = new Size(219, 106);
+            dataGridView7.Size = new Size(219, 128);
             dataGridView7.TabIndex = 6;
             // 
             // button5
             // 
-            button5.Location = new Point(579, 194);
+            button5.Location = new Point(160, 150);
             button5.Name = "button5";
             button5.Size = new Size(75, 23);
             button5.TabIndex = 5;
-            button5.Text = "button5";
+            button5.Text = "Удалить";
             button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(782, 194);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 4;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            button1.Location = new Point(683, 194);
+            button1.Location = new Point(16, 150);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 3;
-            button1.Text = "button1";
+            button1.Text = "Изменить";
             button1.UseVisualStyleBackColor = true;
             // 
             // dataGridView4
             // 
             dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Location = new Point(583, 16);
+            dataGridView4.Location = new Point(517, 16);
             dataGridView4.Name = "dataGridView4";
             dataGridView4.RowTemplate.Height = 25;
-            dataGridView4.Size = new Size(220, 110);
+            dataGridView4.Size = new Size(220, 128);
             dataGridView4.TabIndex = 2;
             // 
             // dataGridView3
             // 
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(323, 16);
+            dataGridView3.Location = new Point(264, 16);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowTemplate.Height = 25;
-            dataGridView3.Size = new Size(220, 110);
+            dataGridView3.Size = new Size(220, 128);
             dataGridView3.TabIndex = 1;
             // 
             // dataGridView2
@@ -474,7 +815,7 @@
             dataGridView2.Location = new Point(16, 16);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(219, 110);
+            dataGridView2.Size = new Size(219, 128);
             dataGridView2.TabIndex = 0;
             // 
             // providers
@@ -500,6 +841,8 @@
             // 
             // allParamProv
             // 
+            allParamProv.Controls.Add(button41);
+            allParamProv.Controls.Add(groupBox4);
             allParamProv.Controls.Add(comboBox3);
             allParamProv.Controls.Add(label3);
             allParamProv.Controls.Add(button11);
@@ -513,6 +856,42 @@
             allParamProv.TabIndex = 0;
             allParamProv.Text = "Сведения о поставщиках";
             allParamProv.UseVisualStyleBackColor = true;
+            // 
+            // button41
+            // 
+            button41.Location = new Point(888, 95);
+            button41.Name = "button41";
+            button41.Size = new Size(147, 23);
+            button41.TabIndex = 15;
+            button41.Text = "Изменить запись";
+            button41.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(dateTimePicker1);
+            groupBox4.Controls.Add(comboBox8);
+            groupBox4.Location = new Point(888, 236);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(147, 170);
+            groupBox4.TabIndex = 14;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Сортировка по поставке";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(6, 47);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(135, 23);
+            dateTimePicker1.TabIndex = 3;
+            // 
+            // comboBox8
+            // 
+            comboBox8.FormattingEnabled = true;
+            comboBox8.Location = new Point(20, 87);
+            comboBox8.Name = "comboBox8";
+            comboBox8.Size = new Size(107, 23);
+            comboBox8.TabIndex = 2;
+            comboBox8.Text = "Действие";
             // 
             // comboBox3
             // 
@@ -533,9 +912,9 @@
             // 
             // button11
             // 
-            button11.Location = new Point(888, 58);
+            button11.Location = new Point(887, 35);
             button11.Name = "button11";
-            button11.Size = new Size(148, 21);
+            button11.Size = new Size(148, 25);
             button11.TabIndex = 6;
             button11.Text = "Добавить запись";
             button11.UseVisualStyleBackColor = true;
@@ -551,7 +930,7 @@
             // 
             // button13
             // 
-            button13.Location = new Point(888, 116);
+            button13.Location = new Point(888, 66);
             button13.Name = "button13";
             button13.Size = new Size(148, 23);
             button13.TabIndex = 8;
@@ -611,6 +990,8 @@
             // 
             // respons
             // 
+            respons.Controls.Add(button42);
+            respons.Controls.Add(groupBox5);
             respons.Controls.Add(comboBox4);
             respons.Controls.Add(label4);
             respons.Controls.Add(button14);
@@ -624,6 +1005,34 @@
             respons.TabIndex = 0;
             respons.Text = "Ответственные";
             respons.UseVisualStyleBackColor = true;
+            // 
+            // button42
+            // 
+            button42.Location = new Point(889, 95);
+            button42.Name = "button42";
+            button42.Size = new Size(147, 23);
+            button42.TabIndex = 15;
+            button42.Text = "Изменить запись";
+            button42.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(comboBox9);
+            groupBox5.Location = new Point(888, 251);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(147, 86);
+            groupBox5.TabIndex = 14;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Поиск по должности";
+            // 
+            // comboBox9
+            // 
+            comboBox9.FormattingEnabled = true;
+            comboBox9.Location = new Point(20, 22);
+            comboBox9.Name = "comboBox9";
+            comboBox9.Size = new Size(107, 23);
+            comboBox9.TabIndex = 2;
+            comboBox9.Text = "Должности";
             // 
             // comboBox4
             // 
@@ -644,25 +1053,25 @@
             // 
             // button14
             // 
-            button14.Location = new Point(888, 58);
+            button14.Location = new Point(887, 35);
             button14.Name = "button14";
-            button14.Size = new Size(148, 21);
+            button14.Size = new Size(148, 25);
             button14.TabIndex = 6;
             button14.Text = "Добавить запись";
             button14.UseVisualStyleBackColor = true;
             // 
             // button15
             // 
-            button15.Location = new Point(888, 6);
+            button15.Location = new Point(887, 6);
             button15.Name = "button15";
-            button15.Size = new Size(148, 23);
+            button15.Size = new Size(149, 23);
             button15.TabIndex = 7;
             button15.Text = "Обновить";
             button15.UseVisualStyleBackColor = true;
             // 
             // button16
             // 
-            button16.Location = new Point(888, 116);
+            button16.Location = new Point(887, 66);
             button16.Name = "button16";
             button16.Size = new Size(148, 23);
             button16.TabIndex = 8;
@@ -740,14 +1149,6 @@
             dataGridView17.Size = new Size(1056, 365);
             dataGridView17.TabIndex = 0;
             // 
-            // checkedListBox1
-            // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(888, 241);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(120, 94);
-            checkedListBox1.TabIndex = 14;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -763,6 +1164,7 @@
             shop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView8).EndInit();
             allParamShop.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView13).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView12).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView11).EndInit();
@@ -770,8 +1172,11 @@
             tabControl3.ResumeLayout(false);
             laptop.ResumeLayout(false);
             laptop.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             allParamLap.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView16).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView6).EndInit();
@@ -783,6 +1188,7 @@
             tabControl4.ResumeLayout(false);
             allParamProv.ResumeLayout(false);
             allParamProv.PerformLayout();
+            groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView10).EndInit();
             emailProv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView14).EndInit();
@@ -790,6 +1196,7 @@
             tabControl5.ResumeLayout(false);
             respons.ResumeLayout(false);
             respons.PerformLayout();
+            groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView9).EndInit();
             allParamRes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView15).EndInit();
@@ -825,7 +1232,6 @@
         private DataGridView dataGridView4;
         private DataGridView dataGridView3;
         private Button button5;
-        private Button button4;
         private Button button1;
         private DataGridView dataGridView5;
         private DataGridView dataGridView6;
@@ -860,6 +1266,43 @@
         private Label label3;
         private ComboBox comboBox4;
         private Label label4;
-        private CheckedListBox checkedListBox1;
+        private GroupBox groupBox1;
+        private ComboBox comboBox5;
+        private TextBox textBox1;
+        private Button button17;
+        private GroupBox groupBox2;
+        private Button button29;
+        private ComboBox comboBox6;
+        private Button button4;
+        private Button button28;
+        private Button button26;
+        private Button button27;
+        private Button button24;
+        private Button button25;
+        private Button button22;
+        private Button button23;
+        private Button button20;
+        private Button button21;
+        private Button button18;
+        private Button button19;
+        private GroupBox groupBox3;
+        private Button button36;
+        private ComboBox comboBox7;
+        private Button button34;
+        private Button button35;
+        private Button button32;
+        private Button button33;
+        private Button button30;
+        private Button button31;
+        private Button button40;
+        private Button button39;
+        private GroupBox groupBox4;
+        private DateTimePicker dateTimePicker1;
+        private ComboBox comboBox8;
+        private GroupBox groupBox5;
+        private ComboBox comboBox9;
+        private Button button41;
+        private Button button42;
+        private ComboBox comboBox10;
     }
 }
