@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
 
@@ -7,7 +8,7 @@ namespace LapTop
     public partial class Form2 : Form
     {
         private OleDbConnection _con;
-        private string table;
+        static public string table;
         private string pole;
 
         public Form2(OleDbConnection connection)
@@ -19,13 +20,19 @@ namespace LapTop
             table = x;
             pole = y;
         }
-      
+
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            if (_con == null || _con.State != ConnectionState.Open)
+            {
+                _con.Open();
+            }
 
             string znach = textBox1.Text;
             string query = $"INSERT INTO {table} ({pole}) VALUES('" + znach + "')";
+            string query2 = $"SELECT * FROM {table}";
+            Form1 frm = new Form1(); //Form2 - название  формы
 
             try
             {
@@ -36,6 +43,9 @@ namespace LapTop
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Запись успешно добавлена.");
+
+                        // Обновляем данные в таблице
+                        frm.LoadData(Path.Combine(Application.StartupPath, "LapTop.mdb"));
                     }
                     else
                     {
@@ -49,8 +59,10 @@ namespace LapTop
             }
             finally
             {
-                _con.Close(); // Закрываем подключение в блоке finally
+                // Закрываем подключение в блоке finally
+                _con.Close();
             }
         }
+
     }
 }

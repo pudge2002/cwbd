@@ -68,6 +68,9 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(button1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Form2";
             Text = "Form2";
             ResumeLayout(false);

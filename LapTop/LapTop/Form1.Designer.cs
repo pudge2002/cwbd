@@ -1,4 +1,6 @@
-﻿namespace LapTop
+﻿using System.Windows.Forms;
+
+namespace LapTop
 {
     partial class Form1
     {
@@ -33,7 +35,6 @@
             shops = new TabPage();
             tabControl2 = new TabControl();
             shop = new TabPage();
-            button40 = new Button();
             comboBox1 = new ComboBox();
             label1 = new Label();
             button8 = new Button();
@@ -42,7 +43,6 @@
             dataGridView8 = new DataGridView();
             allParamShop = new TabPage();
             groupBox3 = new GroupBox();
-            button36 = new Button();
             comboBox7 = new ComboBox();
             button34 = new Button();
             button35 = new Button();
@@ -56,7 +56,6 @@
             laptops = new TabPage();
             tabControl3 = new TabControl();
             laptop = new TabPage();
-            button39 = new Button();
             groupBox1 = new GroupBox();
             comboBox10 = new ComboBox();
             comboBox5 = new ComboBox();
@@ -69,7 +68,6 @@
             button3 = new Button();
             allParamLap = new TabPage();
             groupBox2 = new GroupBox();
-            button29 = new Button();
             comboBox6 = new ComboBox();
             button4 = new Button();
             button28 = new Button();
@@ -95,7 +93,6 @@
             providers = new TabPage();
             tabControl4 = new TabControl();
             allParamProv = new TabPage();
-            button41 = new Button();
             groupBox4 = new GroupBox();
             dateTimePicker1 = new DateTimePicker();
             comboBox8 = new ComboBox();
@@ -106,11 +103,14 @@
             button13 = new Button();
             dataGridView10 = new DataGridView();
             emailProv = new TabPage();
+            groupBox6 = new GroupBox();
+            button43 = new Button();
+            button29 = new Button();
+            button36 = new Button();
             dataGridView14 = new DataGridView();
             responsible = new TabPage();
             tabControl5 = new TabControl();
             respons = new TabPage();
-            button42 = new Button();
             groupBox5 = new GroupBox();
             comboBox9 = new ComboBox();
             comboBox4 = new ComboBox();
@@ -120,6 +120,10 @@
             button16 = new Button();
             dataGridView9 = new DataGridView();
             allParamRes = new TabPage();
+            groupBox7 = new GroupBox();
+            button44 = new Button();
+            button37 = new Button();
+            button38 = new Button();
             dataGridView15 = new DataGridView();
             svo = new TabPage();
             button7 = new Button();
@@ -155,6 +159,7 @@
             groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView10).BeginInit();
             emailProv.SuspendLayout();
+            groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView14).BeginInit();
             responsible.SuspendLayout();
             tabControl5.SuspendLayout();
@@ -162,10 +167,12 @@
             groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView9).BeginInit();
             allParamRes.SuspendLayout();
+            groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView15).BeginInit();
             svo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView17).BeginInit();
             SuspendLayout();
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             // 
             // knopka
             // 
@@ -213,7 +220,6 @@
             // 
             // shop
             // 
-            shop.Controls.Add(button40);
             shop.Controls.Add(comboBox1);
             shop.Controls.Add(label1);
             shop.Controls.Add(button8);
@@ -227,15 +233,6 @@
             shop.TabIndex = 2;
             shop.Text = "Магазин";
             shop.UseVisualStyleBackColor = true;
-            // 
-            // button40
-            // 
-            button40.Location = new Point(889, 95);
-            button40.Name = "button40";
-            button40.Size = new Size(147, 23);
-            button40.TabIndex = 15;
-            button40.Text = "Изменить запись";
-            button40.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -262,6 +259,7 @@
             button8.TabIndex = 6;
             button8.Text = "Добавить запись";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button9
             // 
@@ -271,6 +269,7 @@
             button9.TabIndex = 7;
             button9.Text = "Обновить";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button10
             // 
@@ -288,10 +287,10 @@
             dataGridView8.AllowUserToDeleteRows = false;
             dataGridView8.AllowUserToResizeRows = false;
             dataGridView8.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView8.Location = new Point(6, 6);
+            dataGridView8.Location = new Point(-1, 6);
             dataGridView8.Name = "dataGridView8";
             dataGridView8.RowTemplate.Height = 25;
-            dataGridView8.Size = new Size(856, 388);
+            dataGridView8.Size = new Size(542, 388);
             dataGridView8.TabIndex = 2;
             // 
             // allParamShop
@@ -316,28 +315,18 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(button36);
             groupBox3.Controls.Add(comboBox7);
             groupBox3.Location = new Point(348, 264);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(284, 145);
+            groupBox3.Size = new Size(284, 96);
             groupBox3.TabIndex = 12;
             groupBox3.TabStop = false;
             groupBox3.Text = "Добавить записи";
             // 
-            // button36
-            // 
-            button36.Location = new Point(81, 91);
-            button36.Name = "button36";
-            button36.Size = new Size(119, 54);
-            button36.TabIndex = 1;
-            button36.Text = "Добавить запись";
-            button36.UseVisualStyleBackColor = true;
-            // 
             // comboBox7
             // 
             comboBox7.FormattingEnabled = true;
-            comboBox7.Location = new Point(65, 39);
+            comboBox7.Location = new Point(69, 42);
             comboBox7.Name = "comboBox7";
             comboBox7.Size = new Size(148, 23);
             comboBox7.TabIndex = 0;
@@ -351,6 +340,7 @@
             button34.TabIndex = 11;
             button34.Text = "Удалить";
             button34.UseVisualStyleBackColor = true;
+            button34.Click += button34_Click;
             // 
             // button35
             // 
@@ -369,6 +359,7 @@
             button32.TabIndex = 9;
             button32.Text = "Удалить";
             button32.UseVisualStyleBackColor = true;
+            button32.Click += button32_Click;
             // 
             // button33
             // 
@@ -387,6 +378,7 @@
             button30.TabIndex = 7;
             button30.Text = "Удалить";
             button30.UseVisualStyleBackColor = true;
+            button30.Click += button30_Click;
             // 
             // button31
             // 
@@ -447,7 +439,6 @@
             // 
             // laptop
             // 
-            laptop.Controls.Add(button39);
             laptop.Controls.Add(groupBox1);
             laptop.Controls.Add(comboBox2);
             laptop.Controls.Add(label2);
@@ -462,15 +453,6 @@
             laptop.TabIndex = 0;
             laptop.Text = "Ноутбуки";
             laptop.UseVisualStyleBackColor = true;
-            // 
-            // button39
-            // 
-            button39.Location = new Point(889, 99);
-            button39.Name = "button39";
-            button39.Size = new Size(147, 23);
-            button39.TabIndex = 14;
-            button39.Text = "Изменить запись";
-            button39.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -602,23 +584,13 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(button29);
             groupBox2.Controls.Add(comboBox6);
             groupBox2.Location = new Point(771, 179);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(200, 128);
+            groupBox2.Size = new Size(200, 81);
             groupBox2.TabIndex = 22;
             groupBox2.TabStop = false;
             groupBox2.Text = "Добавить записи";
-            // 
-            // button29
-            // 
-            button29.Location = new Point(48, 74);
-            button29.Name = "button29";
-            button29.Size = new Size(113, 48);
-            button29.TabIndex = 1;
-            button29.Text = "Добавить запись";
-            button29.UseVisualStyleBackColor = true;
             // 
             // comboBox6
             // 
@@ -637,6 +609,7 @@
             button4.TabIndex = 21;
             button4.Text = "Удалить";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button28
             // 
@@ -655,6 +628,7 @@
             button26.TabIndex = 19;
             button26.Text = "Удалить";
             button26.UseVisualStyleBackColor = true;
+            button26.Click += button26_Click;
             // 
             // button27
             // 
@@ -673,6 +647,7 @@
             button24.TabIndex = 17;
             button24.Text = "Удалить";
             button24.UseVisualStyleBackColor = true;
+            button24.Click += button24_Click;
             // 
             // button25
             // 
@@ -691,6 +666,7 @@
             button22.TabIndex = 15;
             button22.Text = "Удалить";
             button22.UseVisualStyleBackColor = true;
+            button22.Click += button22_Click;
             // 
             // button23
             // 
@@ -709,6 +685,7 @@
             button20.TabIndex = 13;
             button20.Text = "Удалить";
             button20.UseVisualStyleBackColor = true;
+            button20.Click += button20_Click;
             // 
             // button21
             // 
@@ -727,6 +704,7 @@
             button18.TabIndex = 11;
             button18.Text = "Удалить";
             button18.UseVisualStyleBackColor = true;
+            button18.Click += button18_Click;
             // 
             // button19
             // 
@@ -781,6 +759,7 @@
             button5.TabIndex = 5;
             button5.Text = "Удалить";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button1
             // 
@@ -841,7 +820,6 @@
             // 
             // allParamProv
             // 
-            allParamProv.Controls.Add(button41);
             allParamProv.Controls.Add(groupBox4);
             allParamProv.Controls.Add(comboBox3);
             allParamProv.Controls.Add(label3);
@@ -857,15 +835,6 @@
             allParamProv.Text = "Сведения о поставщиках";
             allParamProv.UseVisualStyleBackColor = true;
             // 
-            // button41
-            // 
-            button41.Location = new Point(888, 95);
-            button41.Name = "button41";
-            button41.Size = new Size(147, 23);
-            button41.TabIndex = 15;
-            button41.Text = "Изменить запись";
-            button41.UseVisualStyleBackColor = true;
-            // 
             // groupBox4
             // 
             groupBox4.Controls.Add(dateTimePicker1);
@@ -879,10 +848,12 @@
             // 
             // dateTimePicker1
             // 
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.Location = new Point(6, 47);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(135, 23);
             dateTimePicker1.TabIndex = 3;
+            dateTimePicker1.Value = new DateTime(2024, 5, 29, 0, 0, 0, 0);
             // 
             // comboBox8
             // 
@@ -918,6 +889,7 @@
             button11.TabIndex = 6;
             button11.Text = "Добавить запись";
             button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
             // 
             // button12
             // 
@@ -927,6 +899,7 @@
             button12.TabIndex = 7;
             button12.Text = "Обновить";
             button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
             // 
             // button13
             // 
@@ -949,6 +922,9 @@
             // 
             // emailProv
             // 
+            emailProv.Controls.Add(groupBox6);
+            emailProv.Controls.Add(button29);
+            emailProv.Controls.Add(button36);
             emailProv.Controls.Add(dataGridView14);
             emailProv.Location = new Point(4, 24);
             emailProv.Name = "emailProv";
@@ -958,13 +934,52 @@
             emailProv.Text = "Электронные почты поставщиков";
             emailProv.UseVisualStyleBackColor = true;
             // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(button43);
+            groupBox6.Location = new Point(319, 95);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(200, 81);
+            groupBox6.TabIndex = 25;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "Добавить записи";
+            // 
+            // button43
+            // 
+            button43.Location = new Point(34, 22);
+            button43.Name = "button43";
+            button43.Size = new Size(125, 53);
+            button43.TabIndex = 0;
+            button43.Text = "Добавить запись";
+            button43.UseVisualStyleBackColor = true;
+            button43.Click += button43_Click;
+            // 
+            // button29
+            // 
+            button29.Location = new Point(194, 217);
+            button29.Name = "button29";
+            button29.Size = new Size(75, 23);
+            button29.TabIndex = 24;
+            button29.Text = "Удалить";
+            button29.UseVisualStyleBackColor = true;
+            button29.Click += button29_Click;
+            // 
+            // button36
+            // 
+            button36.Location = new Point(22, 217);
+            button36.Name = "button36";
+            button36.Size = new Size(75, 23);
+            button36.TabIndex = 23;
+            button36.Text = "Изменить";
+            button36.UseVisualStyleBackColor = true;
+            // 
             // dataGridView14
             // 
             dataGridView14.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView14.Location = new Point(149, 35);
+            dataGridView14.Location = new Point(22, 24);
             dataGridView14.Name = "dataGridView14";
             dataGridView14.RowTemplate.Height = 25;
-            dataGridView14.Size = new Size(377, 281);
+            dataGridView14.Size = new Size(247, 187);
             dataGridView14.TabIndex = 1;
             // 
             // responsible
@@ -990,7 +1005,6 @@
             // 
             // respons
             // 
-            respons.Controls.Add(button42);
             respons.Controls.Add(groupBox5);
             respons.Controls.Add(comboBox4);
             respons.Controls.Add(label4);
@@ -1005,15 +1019,6 @@
             respons.TabIndex = 0;
             respons.Text = "Ответственные";
             respons.UseVisualStyleBackColor = true;
-            // 
-            // button42
-            // 
-            button42.Location = new Point(889, 95);
-            button42.Name = "button42";
-            button42.Size = new Size(147, 23);
-            button42.TabIndex = 15;
-            button42.Text = "Изменить запись";
-            button42.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -1059,6 +1064,7 @@
             button14.TabIndex = 6;
             button14.Text = "Добавить запись";
             button14.UseVisualStyleBackColor = true;
+            button14.Click += button14_Click;
             // 
             // button15
             // 
@@ -1068,6 +1074,7 @@
             button15.TabIndex = 7;
             button15.Text = "Обновить";
             button15.UseVisualStyleBackColor = true;
+            button15.Click += button15_Click;
             // 
             // button16
             // 
@@ -1085,11 +1092,14 @@
             dataGridView9.Location = new Point(6, 6);
             dataGridView9.Name = "dataGridView9";
             dataGridView9.RowTemplate.Height = 25;
-            dataGridView9.Size = new Size(856, 388);
+            dataGridView9.Size = new Size(643, 388);
             dataGridView9.TabIndex = 2;
             // 
             // allParamRes
             // 
+            allParamRes.Controls.Add(groupBox7);
+            allParamRes.Controls.Add(button37);
+            allParamRes.Controls.Add(button38);
             allParamRes.Controls.Add(dataGridView15);
             allParamRes.Location = new Point(4, 24);
             allParamRes.Name = "allParamRes";
@@ -1099,13 +1109,52 @@
             allParamRes.Text = "Сведения об ответственных";
             allParamRes.UseVisualStyleBackColor = true;
             // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(button44);
+            groupBox7.Location = new Point(334, 84);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Size = new Size(200, 81);
+            groupBox7.TabIndex = 25;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "Добавить записи";
+            // 
+            // button44
+            // 
+            button44.Location = new Point(38, 22);
+            button44.Name = "button44";
+            button44.Size = new Size(125, 53);
+            button44.TabIndex = 1;
+            button44.Text = "Добавить запись";
+            button44.UseVisualStyleBackColor = true;
+            button44.Click += button44_Click;
+            // 
+            // button37
+            // 
+            button37.Location = new Point(194, 229);
+            button37.Name = "button37";
+            button37.Size = new Size(75, 23);
+            button37.TabIndex = 24;
+            button37.Text = "Удалить";
+            button37.UseVisualStyleBackColor = true;
+            button37.Click += button37_Click;
+            // 
+            // button38
+            // 
+            button38.Location = new Point(20, 226);
+            button38.Name = "button38";
+            button38.Size = new Size(75, 23);
+            button38.TabIndex = 23;
+            button38.Text = "Изменить";
+            button38.UseVisualStyleBackColor = true;
+            // 
             // dataGridView15
             // 
             dataGridView15.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView15.Location = new Point(150, 39);
+            dataGridView15.Location = new Point(20, 22);
             dataGridView15.Name = "dataGridView15";
             dataGridView15.RowTemplate.Height = 25;
-            dataGridView15.Size = new Size(377, 281);
+            dataGridView15.Size = new Size(249, 198);
             dataGridView15.TabIndex = 2;
             // 
             // svo
@@ -1151,12 +1200,14 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(1082, 531);
             Controls.Add(entity);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Form1";
-            Text = "Form1";
+            Text = "LapTop";
             entity.ResumeLayout(false);
             shops.ResumeLayout(false);
             tabControl2.ResumeLayout(false);
@@ -1191,6 +1242,7 @@
             groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView10).EndInit();
             emailProv.ResumeLayout(false);
+            groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView14).EndInit();
             responsible.ResumeLayout(false);
             tabControl5.ResumeLayout(false);
@@ -1199,6 +1251,7 @@
             groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView9).EndInit();
             allParamRes.ResumeLayout(false);
+            groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView15).EndInit();
             svo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView17).EndInit();
@@ -1271,7 +1324,6 @@
         private TextBox textBox1;
         private Button button17;
         private GroupBox groupBox2;
-        private Button button29;
         private ComboBox comboBox6;
         private Button button4;
         private Button button28;
@@ -1286,7 +1338,6 @@
         private Button button18;
         private Button button19;
         private GroupBox groupBox3;
-        private Button button36;
         private ComboBox comboBox7;
         private Button button34;
         private Button button35;
@@ -1294,15 +1345,19 @@
         private Button button33;
         private Button button30;
         private Button button31;
-        private Button button40;
-        private Button button39;
         private GroupBox groupBox4;
         private DateTimePicker dateTimePicker1;
         private ComboBox comboBox8;
         private GroupBox groupBox5;
         private ComboBox comboBox9;
-        private Button button41;
-        private Button button42;
         private ComboBox comboBox10;
+        private GroupBox groupBox6;
+        private Button button29;
+        private Button button36;
+        private GroupBox groupBox7;
+        private Button button37;
+        private Button button38;
+        private Button button43;
+        private Button button44;
     }
 }
