@@ -557,15 +557,18 @@ namespace LapTop
         }
         private void ComboBox9_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedValue = comboBox4.SelectedItem.ToString();
-
+            string selectedValue = comboBox9.SelectedItem.ToString();
+            string znach = "'"+comboBox9.Text+"'";
             switch (selectedValue)
             {
-                case "Фамилия ответственного":
-                    LoadDataFromTable2("[Фамилия Ответственного]", dataGridView9, query3);
+                case "Заведующий":
+                    LoadDataFromTable3("f.[Должность ответственного]", dataGridView9, query3,znach, "=");
                     break;
-                case "Должность ответственного":
-                    LoadDataFromTable2("f.[Должность ответственного]", dataGridView9, query3);
+                case "Менеджер":
+                    LoadDataFromTable3("f.[Должность ответственного]", dataGridView9, query3,znach, "=");
+                    break;
+                case "Консультант":
+                    LoadDataFromTable3("f.[Должность ответственного]", dataGridView9, query3,znach, "=");
                     break;
 
                 default:
