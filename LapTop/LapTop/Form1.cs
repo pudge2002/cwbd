@@ -234,6 +234,59 @@ namespace LapTop
             // Формируем запрос на удаление строки с полученным значением ключа
             string query = $"DELETE FROM {table} WHERE [{pole}] = '{keyValue}'";
 
+            DialogResult dr = MessageBox.Show("Вы увиерены что хотите удалить запись?", "Подтверждение удаления", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                try
+                {
+                    // Создаем команду для выполнения SQL-запроса
+                    OleDbCommand command = new OleDbCommand(query, _con);
+
+                    // Открываем подключение к базе данных
+                    _con.Open();
+
+                    // Выполняем запрос, который не возвращает результаты
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Запись успешно удалена.");
+
+                        LoadData(Path.Combine(Application.StartupPath, "LapTop.mdb"));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Запись не была удалена.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при удалении записи: " + ex.Message);
+                }
+                finally
+                {
+                    // Закрываем подключение к базе данных
+                    _con.Close();
+                }
+            }
+        }
+        //изменение в таблицах
+        private void updateInTab(string table, string pole, string newValue, DataGridView dg)
+        {
+            if (_con != null && _con.State == ConnectionState.Open)
+            {
+                _con.Close();
+            }
+
+            // Получаем индекс выбранной строки в DataGridView
+            int rowIndex = dg.CurrentRow.Index;
+
+            // Получаем значение из столбца, содержащего ключ (например, идентификатор)
+            string keyValue = dg.Rows[rowIndex].Cells[pole].Value.ToString();
+
+            // Формируем запрос на обновление значения в столбце с полученным значением ключа
+            string query = $"UPDATE [{table}] SET [{pole}] = '{newValue}' WHERE [{pole}] = '{keyValue}'";
+
             try
             {
                 // Создаем команду для выполнения SQL-запроса
@@ -247,18 +300,18 @@ namespace LapTop
 
                 if (rowsAffected > 0)
                 {
-                    MessageBox.Show("Запись успешно удалена.");
+                    MessageBox.Show("Значение успешно изменено.");
 
                     LoadData(Path.Combine(Application.StartupPath, "LapTop.mdb"));
                 }
                 else
                 {
-                    MessageBox.Show("Запись не была удалена.");
+                    MessageBox.Show("Значение не было изменено.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка при удалении записи: " + ex.Message);
+                MessageBox.Show("Ошибка при изменении значения: " + ex.Message);
             }
             finally
             {
@@ -276,6 +329,7 @@ namespace LapTop
         private void DeleteSelectedRow(OleDbConnection _con, string entity, DataGridView dataGridView)
 
         {
+
             if (_con != null && _con.State == ConnectionState.Open)
             {
                 _con.Close();
@@ -287,33 +341,37 @@ namespace LapTop
 
                 string deleteQuery = $"DELETE FROM [{entity}] WHERE Id = {idToDelete}";
 
-                try
+                DialogResult dr = MessageBox.Show("Вы увиерены что хотите удалить запись?", "Подтверждение удаления", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
                 {
-                    using (OleDbCommand command = new OleDbCommand(deleteQuery, _con))
+                    try
                     {
-                        _con.Open();
-
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        _con.Close();
-
-                        if (rowsAffected > 0)
+                        using (OleDbCommand command = new OleDbCommand(deleteQuery, _con))
                         {
-                            MessageBox.Show("Запись успешно удалена.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Запись не была удалена.");
+                            _con.Open();
+
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            _con.Close();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Запись успешно удалена.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Запись не была удалена.");
+                            }
                         }
                     }
-                }
-                catch (OleDbException ex)
-                {
-                    MessageBox.Show("Ошибка при удалении записи: " + ex.Message);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Произошла непредвиденная ошибка: " + ex.Message);
+                    catch (OleDbException ex)
+                    {
+                        MessageBox.Show("Ошибка при удалении записи: " + ex.Message);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Произошла непредвиденная ошибка: " + ex.Message);
+                    }
                 }
             }
             else
@@ -332,13 +390,13 @@ namespace LapTop
             switch (selectedValue)
             {
                 case "Город":
-                    LoadDataFromTable2("b.[Город]", dataGridView8, query2,desc);
+                    LoadDataFromTable2("b.[Город]", dataGridView8, query2, desc);
                     break;
                 case "Улица":
-                    LoadDataFromTable2("m.[Улица]", dataGridView8, query2,desc);
+                    LoadDataFromTable2("m.[Улица]", dataGridView8, query2, desc);
                     break;
                 case "Дом":
-                    LoadDataFromTable2("[Дом]", dataGridView8, query2,desc);
+                    LoadDataFromTable2("[Дом]", dataGridView8, query2, desc);
                     break;
 
                 default:
@@ -356,7 +414,7 @@ namespace LapTop
             switch (selectedValue)
             {
                 case "Производитель":
-                    LoadDataFromTable2("b.[Производитель]", dataGridView1, query1,desc);
+                    LoadDataFromTable2("b.[Производитель]", dataGridView1, query1, desc);
                     break;
                 case "Модель":
                     LoadDataFromTable2("i.[Модель]", dataGridView1, query1, desc);
@@ -365,7 +423,7 @@ namespace LapTop
                     LoadDataFromTable2("m.[Производитель процессора]", dataGridView1, query1, desc);
                     break;
                 case "Серия процессора":
-                    LoadDataFromTable2("d.[Серия процессора]", dataGridView1, query1,desc);
+                    LoadDataFromTable2("d.[Серия процессора]", dataGridView1, query1, desc);
                     break;
                 case "ОЗУ":
                     LoadDataFromTable2("[ОЗУ]", dataGridView1, query1, desc);
@@ -374,13 +432,13 @@ namespace LapTop
                     LoadDataFromTable2("[Объем SSD]", dataGridView1, query1, desc);
                     break;
                 case "Диагональ экрана":
-                    LoadDataFromTable2("x.[Диагональ экрана]", dataGridView1, query1,desc);
+                    LoadDataFromTable2("x.[Диагональ экрана]", dataGridView1, query1, desc);
                     break;
                 case "Цена":
                     LoadDataFromTable2("[Цена]", dataGridView1, query1, desc);
                     break;
                 case "Статус":
-                    LoadDataFromTable2("q.[Статус]", dataGridView1, query1,desc);
+                    LoadDataFromTable2("q.[Статус]", dataGridView1, query1, desc);
                     break;
                 case "Цвет":
                     LoadDataFromTable2("p.[Цвет]", dataGridView1, query1, desc);
@@ -505,7 +563,7 @@ namespace LapTop
                     LoadDataFromTable2("[Количество поставки]", dataGridView10, query4, desc);
                     break;
                 case "Фамилия поставщика":
-                    LoadDataFromTable2("[Фамилия поставщика]", dataGridView10, query4,desc);
+                    LoadDataFromTable2("[Фамилия поставщика]", dataGridView10, query4, desc);
                     break;
 
                 default:
@@ -566,17 +624,17 @@ namespace LapTop
         private void ComboBox9_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedValue = comboBox9.SelectedItem.ToString();
-            string znach = "'"+comboBox9.Text+"'";
+            string znach = "'" + comboBox9.Text + "'";
             switch (selectedValue)
             {
                 case "Заведующий":
-                    LoadDataFromTable3("f.[Должность ответственного]", dataGridView9, query3,znach, "=");
+                    LoadDataFromTable3("f.[Должность ответственного]", dataGridView9, query3, znach, "=");
                     break;
                 case "Менеджер":
-                    LoadDataFromTable3("f.[Должность ответственного]", dataGridView9, query3,znach, "=");
+                    LoadDataFromTable3("f.[Должность ответственного]", dataGridView9, query3, znach, "=");
                     break;
                 case "Консультант":
-                    LoadDataFromTable3("f.[Должность ответственного]", dataGridView9, query3,znach, "=");
+                    LoadDataFromTable3("f.[Должность ответственного]", dataGridView9, query3, znach, "=");
                     break;
 
                 default:
@@ -762,6 +820,19 @@ namespace LapTop
         private void button15_Click(object sender, EventArgs e)
         {
             LoadData(Path.Combine(Application.StartupPath, "LapTop.mdb"));
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            // Получаем индекс выбранной строки в DataGridView
+            int rowIndex = dataGridView11.CurrentRow.Index;
+
+            // Получаем значение из первой ячейки в выбранной строке
+           
+           //string cv = dataGridView11.Rows[rowIndex].Cells["Город"].Value.ToString();
+            MessageBox.Show("Данные измененены ");
+            //updateInTab("Города", "Город", cv, dataGridView11);
+
         }
     }
 }

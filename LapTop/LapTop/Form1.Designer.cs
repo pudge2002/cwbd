@@ -35,6 +35,7 @@ namespace LapTop
             shops = new TabPage();
             tabControl2 = new TabControl();
             shop = new TabPage();
+            checkBox1 = new CheckBox();
             comboBox1 = new ComboBox();
             label1 = new Label();
             button8 = new Button();
@@ -56,6 +57,7 @@ namespace LapTop
             laptops = new TabPage();
             tabControl3 = new TabControl();
             laptop = new TabPage();
+            checkBox2 = new CheckBox();
             groupBox1 = new GroupBox();
             comboBox10 = new ComboBox();
             comboBox5 = new ComboBox();
@@ -93,6 +95,7 @@ namespace LapTop
             providers = new TabPage();
             tabControl4 = new TabControl();
             allParamProv = new TabPage();
+            checkBox3 = new CheckBox();
             groupBox4 = new GroupBox();
             dateTimePicker1 = new DateTimePicker();
             comboBox8 = new ComboBox();
@@ -111,6 +114,7 @@ namespace LapTop
             responsible = new TabPage();
             tabControl5 = new TabControl();
             respons = new TabPage();
+            checkBox4 = new CheckBox();
             groupBox5 = new GroupBox();
             comboBox9 = new ComboBox();
             comboBox4 = new ComboBox();
@@ -129,10 +133,6 @@ namespace LapTop
             button7 = new Button();
             button6 = new Button();
             dataGridView17 = new DataGridView();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox4 = new CheckBox();
             entity.SuspendLayout();
             shops.SuspendLayout();
             tabControl2.SuspendLayout();
@@ -237,6 +237,16 @@ namespace LapTop
             shop.TabIndex = 2;
             shop.Text = "Магазин";
             shop.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(897, 216);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(139, 19);
+            checkBox1.TabIndex = 11;
+            checkBox1.Text = "В обратном порядке";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -392,6 +402,7 @@ namespace LapTop
             button31.TabIndex = 6;
             button31.Text = "Изменить";
             button31.UseVisualStyleBackColor = true;
+            button31.Click += button31_Click;
             // 
             // dataGridView13
             // 
@@ -458,6 +469,16 @@ namespace LapTop
             laptop.TabIndex = 0;
             laptop.Text = "Ноутбуки";
             laptop.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(896, 217);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(139, 19);
+            checkBox2.TabIndex = 14;
+            checkBox2.Text = "В обратном порядке";
+            checkBox2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -841,6 +862,16 @@ namespace LapTop
             allParamProv.Text = "Сведения о поставщиках";
             allParamProv.UseVisualStyleBackColor = true;
             // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.Location = new Point(896, 227);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(139, 19);
+            checkBox3.TabIndex = 15;
+            checkBox3.Text = "В обратном порядке";
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
             // groupBox4
             // 
             groupBox4.Controls.Add(dateTimePicker1);
@@ -1027,6 +1058,16 @@ namespace LapTop
             respons.Text = "Ответственные";
             respons.UseVisualStyleBackColor = true;
             // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.Location = new Point(897, 231);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(139, 19);
+            checkBox4.TabIndex = 15;
+            checkBox4.Text = "В обратном порядке";
+            checkBox4.UseVisualStyleBackColor = true;
+            // 
             // groupBox5
             // 
             groupBox5.Controls.Add(comboBox9);
@@ -1204,46 +1245,6 @@ namespace LapTop
             dataGridView17.RowTemplate.Height = 25;
             dataGridView17.Size = new Size(1056, 365);
             dataGridView17.TabIndex = 0;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(897, 216);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(139, 19);
-            checkBox1.TabIndex = 11;
-            checkBox1.Text = "В обратном порядке";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(896, 217);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(139, 19);
-            checkBox2.TabIndex = 14;
-            checkBox2.Text = "В обратном порядке";
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(896, 227);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(139, 19);
-            checkBox3.TabIndex = 15;
-            checkBox3.Text = "В обратном порядке";
-            checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(897, 231);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(139, 19);
-            checkBox4.TabIndex = 15;
-            checkBox4.Text = "В обратном порядке";
-            checkBox4.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
