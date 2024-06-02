@@ -129,6 +129,10 @@ namespace LapTop
             button7 = new Button();
             button6 = new Button();
             dataGridView17 = new DataGridView();
+            checkBox1 = new CheckBox();
+            checkBox2 = new CheckBox();
+            checkBox3 = new CheckBox();
+            checkBox4 = new CheckBox();
             entity.SuspendLayout();
             shops.SuspendLayout();
             tabControl2.SuspendLayout();
@@ -172,7 +176,6 @@ namespace LapTop
             svo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView17).BeginInit();
             SuspendLayout();
-            FormBorderStyle = FormBorderStyle.FixedSingle;
             // 
             // knopka
             // 
@@ -220,6 +223,7 @@ namespace LapTop
             // 
             // shop
             // 
+            shop.Controls.Add(checkBox1);
             shop.Controls.Add(comboBox1);
             shop.Controls.Add(label1);
             shop.Controls.Add(button8);
@@ -439,6 +443,7 @@ namespace LapTop
             // 
             // laptop
             // 
+            laptop.Controls.Add(checkBox2);
             laptop.Controls.Add(groupBox1);
             laptop.Controls.Add(comboBox2);
             laptop.Controls.Add(label2);
@@ -460,9 +465,9 @@ namespace LapTop
             groupBox1.Controls.Add(comboBox5);
             groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(button17);
-            groupBox1.Location = new Point(889, 224);
+            groupBox1.Location = new Point(888, 251);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(147, 170);
+            groupBox1.Size = new Size(147, 143);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
             groupBox1.Text = "Действия";
@@ -820,6 +825,7 @@ namespace LapTop
             // 
             // allParamProv
             // 
+            allParamProv.Controls.Add(checkBox3);
             allParamProv.Controls.Add(groupBox4);
             allParamProv.Controls.Add(comboBox3);
             allParamProv.Controls.Add(label3);
@@ -839,9 +845,9 @@ namespace LapTop
             // 
             groupBox4.Controls.Add(dateTimePicker1);
             groupBox4.Controls.Add(comboBox8);
-            groupBox4.Location = new Point(888, 236);
+            groupBox4.Location = new Point(887, 259);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(147, 170);
+            groupBox4.Size = new Size(147, 135);
             groupBox4.TabIndex = 14;
             groupBox4.TabStop = false;
             groupBox4.Text = "Сортировка по поставке";
@@ -1005,6 +1011,7 @@ namespace LapTop
             // 
             // respons
             // 
+            respons.Controls.Add(checkBox4);
             respons.Controls.Add(groupBox5);
             respons.Controls.Add(comboBox4);
             respons.Controls.Add(label4);
@@ -1023,7 +1030,7 @@ namespace LapTop
             // groupBox5
             // 
             groupBox5.Controls.Add(comboBox9);
-            groupBox5.Location = new Point(888, 251);
+            groupBox5.Location = new Point(888, 308);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(147, 86);
             groupBox5.TabIndex = 14;
@@ -1198,12 +1205,53 @@ namespace LapTop
             dataGridView17.Size = new Size(1056, 365);
             dataGridView17.TabIndex = 0;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(897, 216);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(139, 19);
+            checkBox1.TabIndex = 11;
+            checkBox1.Text = "В обратном порядке";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(896, 217);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(139, 19);
+            checkBox2.TabIndex = 14;
+            checkBox2.Text = "В обратном порядке";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.Location = new Point(896, 227);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(139, 19);
+            checkBox3.TabIndex = 15;
+            checkBox3.Text = "В обратном порядке";
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.Location = new Point(897, 231);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(139, 19);
+            checkBox4.TabIndex = 15;
+            checkBox4.Text = "В обратном порядке";
+            checkBox4.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(1082, 531);
             Controls.Add(entity);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form1";
@@ -1359,5 +1407,9 @@ namespace LapTop
         private Button button38;
         private Button button43;
         private Button button44;
+        private CheckBox checkBox1;
+        private CheckBox checkBox2;
+        private CheckBox checkBox3;
+        private CheckBox checkBox4;
     }
 }

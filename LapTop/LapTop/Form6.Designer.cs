@@ -30,7 +30,6 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            FormBorderStyle = FormBorderStyle.FixedSingle;
             button2 = new Button();
             label7 = new Label();
             textBox5 = new TextBox();
@@ -220,10 +219,11 @@
             ClientSize = new Size(470, 431);
             Controls.Add(groupBox1);
             Controls.Add(dataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form6";
-            Text = "Form6";
+            Text = "Добавление поставщика";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

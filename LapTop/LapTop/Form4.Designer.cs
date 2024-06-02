@@ -186,7 +186,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form4";
-            Text = "Form4";
+            Text = "Добавление магазина";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();

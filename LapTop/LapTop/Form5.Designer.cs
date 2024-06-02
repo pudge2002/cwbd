@@ -181,7 +181,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form5";
-            Text = "Form5";
+            Text = "Добавление ответственного";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

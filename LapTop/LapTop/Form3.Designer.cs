@@ -385,7 +385,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form3";
-            Text = "Form3";
+            Text = "Добавление ноутбука";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

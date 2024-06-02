@@ -326,17 +326,19 @@ namespace LapTop
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedValue = comboBox1.SelectedItem.ToString();
-
+            string desc = "";
+            if (checkBox1.Checked)
+                desc = "DESC";
             switch (selectedValue)
             {
                 case "Город":
-                    LoadDataFromTable2("b.[Город]", dataGridView8, query2);
+                    LoadDataFromTable2("b.[Город]", dataGridView8, query2,desc);
                     break;
                 case "Улица":
-                    LoadDataFromTable2("m.[Улица]", dataGridView8, query2);
+                    LoadDataFromTable2("m.[Улица]", dataGridView8, query2,desc);
                     break;
                 case "Дом":
-                    LoadDataFromTable2("[Дом]", dataGridView8, query2);
+                    LoadDataFromTable2("[Дом]", dataGridView8, query2,desc);
                     break;
 
                 default:
@@ -348,38 +350,40 @@ namespace LapTop
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedValue = comboBox2.SelectedItem.ToString();
-
+            string desc = "";
+            if (checkBox2.Checked)
+                desc = "DESC";
             switch (selectedValue)
             {
                 case "Производитель":
-                    LoadDataFromTable2("b.[Производитель]", dataGridView1, query1);
+                    LoadDataFromTable2("b.[Производитель]", dataGridView1, query1,desc);
                     break;
                 case "Модель":
-                    LoadDataFromTable2("i.[Модель]", dataGridView1, query1);
+                    LoadDataFromTable2("i.[Модель]", dataGridView1, query1, desc);
                     break;
                 case "Производитель процессора":
-                    LoadDataFromTable2("m.[Производитель процессора]", dataGridView1, query1);
+                    LoadDataFromTable2("m.[Производитель процессора]", dataGridView1, query1, desc);
                     break;
                 case "Серия процессора":
-                    LoadDataFromTable2("d.[Серия процессора]", dataGridView1, query1);
+                    LoadDataFromTable2("d.[Серия процессора]", dataGridView1, query1,desc);
                     break;
                 case "ОЗУ":
-                    LoadDataFromTable2("[ОЗУ]", dataGridView1, query1);
+                    LoadDataFromTable2("[ОЗУ]", dataGridView1, query1, desc);
                     break;
                 case "Объем SSD":
-                    LoadDataFromTable2("[Объем SSD]", dataGridView1, query1);
+                    LoadDataFromTable2("[Объем SSD]", dataGridView1, query1, desc);
                     break;
                 case "Диагональ экрана":
-                    LoadDataFromTable2("x.[Диагональ экрана]", dataGridView1, query1);
+                    LoadDataFromTable2("x.[Диагональ экрана]", dataGridView1, query1,desc);
                     break;
                 case "Цена":
-                    LoadDataFromTable2("[Цена]", dataGridView1, query1);
+                    LoadDataFromTable2("[Цена]", dataGridView1, query1, desc);
                     break;
                 case "Статус":
-                    LoadDataFromTable2("q.[Статус]", dataGridView1, query1);
+                    LoadDataFromTable2("q.[Статус]", dataGridView1, query1,desc);
                     break;
                 case "Цвет":
-                    LoadDataFromTable2("p.[Цвет]", dataGridView1, query1);
+                    LoadDataFromTable2("p.[Цвет]", dataGridView1, query1, desc);
                     break;
 
                 default:
@@ -433,15 +437,17 @@ namespace LapTop
         private void ComboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedValue = comboBox4.SelectedItem.ToString();
-
+            string desc = "";
+            if (checkBox4.Checked)
+                desc = "DESC";
             switch (selectedValue)
             {
 
                 case "Фамилия Ответственного":
-                    LoadDataFromTable2("[Фамилия Ответственного]", dataGridView9, query3);
+                    LoadDataFromTable2("[Фамилия Ответственного]", dataGridView9, query3, desc);
                     break;
                 case "Должность ответственного":
-                    LoadDataFromTable2("f.[Должность ответственного]", dataGridView9, query3);
+                    LoadDataFromTable2("f.[Должность ответственного]", dataGridView9, query3, desc);
                     break;
 
                 default:
@@ -487,17 +493,19 @@ namespace LapTop
         private void ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedValue = comboBox3.SelectedItem.ToString();
-
+            string desc = "";
+            if (checkBox3.Checked)
+                desc = "DESC";
             switch (selectedValue)
             {
                 case "Дата поставки":
-                    LoadDataFromTable2("[Дата поставки]", dataGridView10, query4);
+                    LoadDataFromTable2("[Дата поставки]", dataGridView10, query4, desc);
                     break;
                 case "Количество поставки":
-                    LoadDataFromTable2("[Количество поставки]", dataGridView10, query4);
+                    LoadDataFromTable2("[Количество поставки]", dataGridView10, query4, desc);
                     break;
                 case "Фамилия поставщика":
-                    LoadDataFromTable2("[Фамилия поставщика]", dataGridView10, query4);
+                    LoadDataFromTable2("[Фамилия поставщика]", dataGridView10, query4,desc);
                     break;
 
                 default:
@@ -576,10 +584,10 @@ namespace LapTop
                     break;
             }
         }
-        private void LoadDataFromTable2(string tableName, DataGridView dataGridVieww, string querry)
+        private void LoadDataFromTable2(string tableName, DataGridView dataGridVieww, string querry, string desc)
         {
 
-            string query = $"{querry} ORDER BY {tableName}";
+            string query = $"{querry} ORDER BY {tableName} {desc}";
             OleDbCommand command = new OleDbCommand(query, _con);
             OleDbDataAdapter adapter = new OleDbDataAdapter(command);
             DataTable dataTable = new DataTable();

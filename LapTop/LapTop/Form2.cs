@@ -15,10 +15,13 @@ namespace LapTop
         {
             InitializeComponent();
             _con = connection;
+            
+
         }
         public void data(string x, string y) { 
             table = x;
             pole = y;
+            label3.Text = y ;    
         }
 
 

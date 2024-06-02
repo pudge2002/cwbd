@@ -30,7 +30,8 @@
         {
             button1 = new Button();
             textBox1 = new TextBox();
-            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -51,28 +52,38 @@
             textBox1.Size = new Size(149, 23);
             textBox1.TabIndex = 1;
             // 
-            // label1
+            // label2
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(54, 58);
-            label1.Name = "label1";
-            label1.Size = new Size(107, 15);
-            label1.TabIndex = 2;
-            label1.Text = "Укажите значение";
+            label2.AutoSize = true;
+            label2.Location = new Point(62, 37);
+            label2.Name = "label2";
+            label2.Size = new Size(102, 15);
+            label2.TabIndex = 3;
+            label2.Text = "Добавить запись:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(87, 62);
+            label3.Name = "label3";
+            label3.Size = new Size(38, 15);
+            label3.TabIndex = 4;
+            label3.Text = "label3";
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(229, 198);
-            Controls.Add(label1);
+            Controls.Add(label3);
+            Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form2";
-            Text = "Form2";
+            Text = "Добавление записи";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -81,6 +92,7 @@
 
         private Button button1;
         private TextBox textBox1;
-        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }
